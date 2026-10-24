@@ -57,6 +57,7 @@ export default function About() {
             <div className="about-image-wrap" data-aos="fade-right">
               <img src="/images/manufacturing/manufacturing-hall.jpg" alt="ATV Precision Manufacturing Facility" loading="lazy" />
               <div className="about-badge">
+                <img src="/images/logo.svg" alt="ATV Precision" style={{ width: 34, height: 34, objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(229,57,53,0.4))' }} />
                 <strong>25+</strong>
                 <span>Years of Excellence</span>
               </div>
@@ -96,8 +97,15 @@ export default function About() {
       <section className="md-section">
         <div className="container">
           <div className="md-card" data-aos="fade-up">
-            <div className="md-photo">
-              <i className="fas fa-user"></i>
+            <div className="md-photo-wrap">
+              <img
+                src="/images/manager.jpeg"
+                alt="K. Raghavendran B.E. - Managing Director"
+                className="md-photo"
+              />
+              <div className="md-badge-seal" title="ATV Precision Components">
+                <img src="/images/logo.svg" alt="ATV Logo" />
+              </div>
             </div>
             <div>
               <p className="md-quote">

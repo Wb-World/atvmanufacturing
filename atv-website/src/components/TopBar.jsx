@@ -26,6 +26,11 @@ export default function TopBar() {
               <i className="fas fa-clock"></i>
               Mon–Sat: 9:00 AM – 6:00 PM
             </span>
+            <div className="top-bar-social" style={{ display: 'flex', gap: 12, marginLeft: 6 }}>
+              <a href="#" aria-label="LinkedIn" style={{ color: 'rgba(255,255,255,0.7)' }}><i className="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Facebook" style={{ color: 'rgba(255,255,255,0.7)' }}><i className="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter" style={{ color: 'rgba(255,255,255,0.7)' }}><i className="fab fa-twitter"></i></a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import ClientRouteMap from '../components/ClientRouteMap'
 
 const features = [
   {
@@ -111,7 +112,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-label" data-aos="fade-down">
-              <i className="fas fa-industry"></i>
+              <img src="/images/logo.svg" alt="ATV Emblem" className="hero-badge-logo" />
               Fine Blanking Technology Leaders
             </div>
             <h1 data-aos="fade-up" data-aos-delay="100">
@@ -303,30 +304,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CLIENTS ── */}
-      <section className="section clients-section">
-        <div className="container" style={{ marginBottom: 40 }}>
-          <div style={{ textAlign: 'center' }}>
-            <span className="section-label" data-aos="fade-up">Trusted Partners</span>
-            <h2 className="section-title" data-aos="fade-up" data-aos-delay="100">
-              Our <span>Valued Clients</span>
-            </h2>
-            <div className="section-divider" style={{ margin: '0 auto 20px' }} data-aos="fade-up" data-aos-delay="150"></div>
-            <p className="section-subtitle" style={{ margin: '0 auto' }} data-aos="fade-up" data-aos-delay="200">
-              Trusted by leading automotive and industrial manufacturers across India and globally.
-            </p>
-          </div>
+      {/* ── CLIENT LOGO TICKER ── */}
+      <div style={{ background: '#fff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
+        <div className="clients-track">
+          {allClients.map((c, i) => (
+            <div className="client-logo" key={i}>
+              <img src={c.img} alt={c.name} title={c.name} loading="lazy" />
+            </div>
+          ))}
         </div>
-        <div style={{ borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
-          <div className="clients-track">
-            {allClients.map((c, i) => (
-              <div className="client-logo" key={i}>
-                <img src={c.img} alt={c.name} title={c.name} loading="lazy" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
+
+      {/* ── REAL CLIENT ROUTE MAP FROM OUR LOCATION ── */}
+      <ClientRouteMap />
 
       {/* ── CTA BANNER ── */}
       <section className="cta-banner">

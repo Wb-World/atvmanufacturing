@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Col 1 — Company Info */}
           <div>
             <div className="footer-logo">
-              <div className="footer-logo-icon">A</div>
+              <img src="/images/logo.svg" alt="ATV Precision Components Logo" className="footer-logo-img" />
               <div className="footer-logo-text">
                 <strong>ATV Precision Components</strong>
                 <span>Pvt. Ltd.</span>

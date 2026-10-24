@@ -91,16 +91,16 @@ export default function Contact() {
             {/* LEFT — FORM */}
             <div data-aos="fade-right">
               <div className="contact-form">
-                <h3><i className="fas fa-paper-plane" style={{ color: 'var(--primary-green)', marginRight: 8 }}></i>Send Us a Message</h3>
+                <h3><i className="fas fa-paper-plane" style={{ color: 'var(--primary-blue)', marginRight: 8 }}></i>Send Us a Message</h3>
 
                 {status === 'success' && (
                   <div
                     style={{
                       padding: '16px 20px',
-                      background: 'rgba(76,175,80,0.1)',
-                      border: '1px solid rgba(76,175,80,0.4)',
+                      background: 'rgba(37,99,235,0.08)',
+                      border: '1px solid rgba(37,99,235,0.3)',
                       borderRadius: 'var(--radius)',
-                      color: 'var(--primary-green)',
+                      color: 'var(--primary-blue)',
                       fontWeight: 600,
                       marginBottom: 20,
                       display: 'flex',
@@ -278,7 +278,7 @@ export default function Contact() {
               color: 'var(--muted-text)',
             }}
           >
-            <i className="fas fa-directions" style={{ color: 'var(--primary-green)', fontSize: 18 }}></i>
+            <i className="fas fa-directions" style={{ color: 'var(--primary-blue)', fontSize: 18 }}></i>
             <span>
               <strong>Getting Here:</strong> No.19, New SIDCO Industrial Estate, Maraimalai Nagar, Tamil Nadu – 603209.
               Located approx. 45 km from Chennai city centre via GST Road (NH-44).

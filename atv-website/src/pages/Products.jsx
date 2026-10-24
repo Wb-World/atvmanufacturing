@@ -144,8 +144,8 @@ export default function Products() {
                 onClick={() => setActiveFilter(f)}
                 style={{
                   padding: '8px 22px',
-                  border: `2px solid ${activeFilter === f ? 'var(--primary-green)' : 'var(--border-color)'}`,
-                  background: activeFilter === f ? 'var(--primary-green)' : '#fff',
+                  border: `2px solid ${activeFilter === f ? 'var(--primary-blue)' : 'var(--border-color)'}`,
+                  background: activeFilter === f ? 'var(--primary-blue)' : '#fff',
                   color: activeFilter === f ? '#fff' : 'var(--muted-text)',
                   borderRadius: 50,
                   fontFamily: 'var(--font-heading)',
@@ -171,7 +171,7 @@ export default function Products() {
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-                    <i className="fas fa-industry" style={{ color: 'var(--secondary-green)', fontSize: 12 }}></i>
+                    <i className="fas fa-industry" style={{ color: 'var(--secondary-blue)', fontSize: 12 }}></i>
                     <span style={{ fontSize: 12, color: 'var(--muted-text)' }}>{p.industry}</span>
                   </div>
                   <Link to="/contact" className="product-enquire">
@@ -211,11 +211,11 @@ export default function Products() {
         <div className="container">
           <div className="materials-grid">
             <div data-aos="fade-right">
-              <span className="section-label" style={{ color: 'var(--light-green)' }}>Raw Material</span>
+              <span className="section-label" style={{ color: 'var(--light-blue)' }}>Raw Material</span>
               <h2 className="section-title" style={{ color: '#fff' }}>
-                Material <span style={{ color: 'var(--light-green)' }}>Capabilities</span>
+                Material <span style={{ color: 'var(--light-blue)' }}>Capabilities</span>
               </h2>
-              <div className="section-divider" style={{ background: 'linear-gradient(90deg, var(--light-green), transparent)' }}></div>
+              <div className="section-divider" style={{ background: 'linear-gradient(90deg, var(--light-blue), transparent)' }}></div>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.9, fontSize: 15, marginBottom: 28 }}>
                 Ability to source steel from within TI and our association with renowned fine blanking
                 steel mills and suppliers from overseas. Special spheroidization annealing process of
@@ -257,7 +257,7 @@ export default function Products() {
                 backdropFilter: 'blur(10px)',
               }}>
                 <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: 14, lineHeight: 1.7 }}>
-                  <strong style={{ color: 'var(--light-green)', display: 'block', marginBottom: 8 }}>
+                  <strong style={{ color: 'var(--light-blue)', display: 'block', marginBottom: 8 }}>
                     <i className="fas fa-download"></i> Product Catalogue
                   </strong>
                   For a complete list of materials, thicknesses, and product specifications,

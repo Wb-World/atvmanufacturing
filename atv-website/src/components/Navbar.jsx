@@ -29,8 +29,8 @@ export default function Navbar() {
       <div className="container">
         <div className="navbar-inner">
           {/* Logo */}
-          <Link to="/" className="logo">
-            <div className="logo-icon">A</div>
+          <Link to="/" className="logo" aria-label="ATV Precision Components Home">
+            <img src="/images/logo.svg" alt="ATV Precision Components Logo" className="logo-img" />
             <div className="logo-text">
               <strong>ATV Precision Components</strong>
               <span>Pvt. Ltd. — Passion for Precision</span>
