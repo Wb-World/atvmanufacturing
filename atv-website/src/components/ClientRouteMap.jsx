@@ -6,17 +6,17 @@ import 'leaflet/dist/leaflet.css'
 const ATV_ORIGIN = {
   name: 'ATV Precision Components Pvt. Ltd.',
   tag: 'Manufacturing Headquarters & Fine Blanking Plant',
-  address: 'No.19 & 36, New SIDCO Industrial Estate, Maraimalai Nagar, Tamil Nadu 603209',
+  address: 'No.19 & 36, New SIDCO Industrial Estate, Maraimalai Nagar, Tamil Nadu 603209, India',
   coords: [12.7937, 80.0253],
 }
 
-// 15 Automotive & Industrial Clients with real logistics routes from Maraimalai Nagar
+// 15 Key Automotive OEM & Tier-1 Clients with coordinates & arc curvature parameters
 const clientsData = [
   {
     id: 'woosu',
     name: 'Woosu Automotive India',
     tier: 'Tier-1 Automotive Partner',
-    hub: 'Singaperumal Koil / MM Nagar Industrial Corridor',
+    hub: 'Singaperumal Koil / MM Nagar Corridor',
     region: 'chennai-corridor',
     distanceKm: 7,
     transitTime: '12 mins',
@@ -25,12 +25,8 @@ const clientsData = [
     frequency: 'Daily JIT Express Deliveries (Zero-Delay Supply)',
     logo: '/images/clients/woosu-india-client.jpg',
     coords: [12.7615, 80.0052],
-    route: [
-      [12.7937, 80.0253],
-      [12.7845, 80.0195],
-      [12.7720, 80.0125],
-      [12.7615, 80.0052],
-    ],
+    curveDir: -1,
+    curveBend: 0.28,
   },
   {
     id: 'daimler',
@@ -45,13 +41,8 @@ const clientsData = [
     frequency: 'Continuous Dedicated Freight Shuttle',
     logo: '/images/clients/daimler-truck.jpg',
     coords: [12.8312, 79.9234],
-    route: [
-      [12.7937, 80.0253],
-      [12.7650, 80.0020],
-      [12.7820, 79.9650],
-      [12.8050, 79.9410],
-      [12.8312, 79.9234],
-    ],
+    curveDir: 1,
+    curveBend: 0.22,
   },
   {
     id: 'gestamp',
@@ -66,13 +57,8 @@ const clientsData = [
     frequency: 'Direct Kanban Line Supply',
     logo: '/images/clients/gestamp-client.jpg',
     coords: [12.8425, 79.9362],
-    route: [
-      [12.7937, 80.0253],
-      [12.7650, 80.0020],
-      [12.7880, 79.9620],
-      [12.8220, 79.9410],
-      [12.8425, 79.9362],
-    ],
+    curveDir: 1,
+    curveBend: 0.30,
   },
   {
     id: 'garrett',
@@ -87,18 +73,13 @@ const clientsData = [
     frequency: 'Scheduled High-Volume Synchronized JIT',
     logo: '/images/clients/garrett-advancing-motion-client.jpg',
     coords: [12.8530, 79.9180],
-    route: [
-      [12.7937, 80.0253],
-      [12.7650, 80.0020],
-      [12.7950, 79.9550],
-      [12.8350, 79.9250],
-      [12.8530, 79.9180],
-    ],
+    curveDir: 1,
+    curveBend: 0.38,
   },
   {
     id: 'hyundai',
     name: 'Hyundai Motor India / Tier-1 Partners',
-    tier: 'Global Automotive OEM & Tier-1',
+    tier: 'Global Automotive OEM & Tier-1 Hub',
     hub: 'Irungattukottai SIPCOT, Sriperumbudur',
     region: 'oragadam-sriperumbudur',
     distanceKm: 28,
@@ -108,14 +89,8 @@ const clientsData = [
     frequency: 'Certified 100 PPM Supplier Logistics Protocol',
     logo: '/images/clients/woosu-india-client.jpg',
     coords: [13.0035, 79.9880],
-    route: [
-      [12.7937, 80.0253],
-      [12.8300, 80.0380],
-      [12.8900, 80.0350],
-      [12.9450, 80.0120],
-      [12.9850, 79.9980],
-      [13.0035, 79.9880],
-    ],
+    curveDir: -1,
+    curveBend: 0.20,
   },
   {
     id: 'inzi',
@@ -130,13 +105,8 @@ const clientsData = [
     frequency: 'Daily Scheduled Dispatch',
     logo: '/images/clients/inzi-controls-client.jpg',
     coords: [12.9962, 79.9740],
-    route: [
-      [12.7937, 80.0253],
-      [12.8350, 80.0350],
-      [12.8950, 80.0300],
-      [12.9550, 80.0050],
-      [12.9962, 79.9740],
-    ],
+    curveDir: -1,
+    curveBend: 0.28,
   },
   {
     id: 'delphi',
@@ -148,203 +118,158 @@ const clientsData = [
     transitTime: '40 mins',
     highway: 'SH 57 Sriperumbudur Expressway',
     products: 'Precision common rail & diesel fuel injection mounting plates',
-    frequency: 'Daily Production Line Feeding',
-    logo: '/images/clients/delphi-tvs-tech-client.jpg',
-    coords: [12.9820, 79.9480],
-    route: [
-      [12.7937, 80.0253],
-      [12.7650, 80.0020],
-      [12.8350, 79.9250],
-      [12.9150, 79.9320],
-      [12.9820, 79.9480],
-    ],
+    frequency: 'Daily Express Shuttle',
+    logo: '/images/clients/delphi-tvs-client.jpg',
+    coords: [13.0210, 79.9450],
+    curveDir: -1,
+    curveBend: 0.34,
   },
   {
-    id: 'nash',
-    name: 'Nash Industries',
-    tier: 'Automotive Precision Stamping Leader',
-    hub: 'Sriperumbudur SIPCOT Sector',
-    region: 'oragadam-sriperumbudur',
-    distanceKm: 31,
-    transitTime: '38 mins',
-    highway: 'SH 57 & NH 48 Corridor',
-    products: 'Deep drawn metal parts, fine blanked functional levers & assemblies',
-    frequency: 'Daily JIT Supply System',
-    logo: '/images/clients/nash-industries client.jpg',
-    coords: [12.9710, 79.9390],
-    route: [
-      [12.7937, 80.0253],
-      [12.7650, 80.0020],
-      [12.8350, 79.9250],
-      [12.9050, 79.9300],
-      [12.9710, 79.9390],
-    ],
-  },
-  {
-    id: 'enkei',
-    name: 'Enkei Wheels India',
-    tier: 'Global Automotive Wheel OEM',
-    hub: 'Sriperumbudur Hi-Tech SEZ',
-    region: 'oragadam-sriperumbudur',
-    distanceKm: 29,
-    transitTime: '35 mins',
-    highway: 'Oragadam-Sriperumbudur 6-Lane',
-    products: 'Automotive wheel mounting plates & disc brake hardware',
-    frequency: 'Scheduled Shift-Wise Dispatches',
-    logo: '/images/clients/ENKEI-client.jpg',
-    coords: [12.9540, 79.9220],
-    route: [
-      [12.7937, 80.0253],
-      [12.7650, 80.0020],
-      [12.8350, 79.9250],
-      [12.8950, 79.9200],
-      [12.9540, 79.9220],
-    ],
-  },
-  {
-    id: 'tel',
-    name: 'TEL (Turbo Energy Ltd. - BorgWarner TVS)',
-    tier: 'Turbocharger Systems Specialist',
-    hub: 'Paiyanur / OMR Automotive Technology Hub',
-    region: 'chennai-corridor',
-    distanceKm: 34,
-    transitTime: '42 mins',
-    highway: 'Chengalpattu-Thiruporur Link & OMR',
-    products: 'Turbocharger nozzle rings, wastegates & precision actuating levers',
-    frequency: 'Direct-to-Line Assembly Feed',
-    logo: '/images/clients/Tel-turbo-energy-client.jpg',
-    coords: [12.6340, 80.1450],
-    route: [
-      [12.7937, 80.0253],
-      [12.7600, 80.0450],
-      [12.7150, 80.0850],
-      [12.6650, 80.1250],
-      [12.6340, 80.1450],
-    ],
-  },
-  {
-    id: 'zfrane',
-    name: 'ZF / Rane Automotive',
-    tier: 'Steering & Safety Systems Tier-1',
-    hub: 'Singaperumal Koil / Guduvanchery Sector',
-    region: 'chennai-corridor',
-    distanceKm: 9,
-    transitTime: '15 mins',
-    highway: 'NH 45 (GST Road)',
-    products: 'Steering rack guide components, fine blanked pinion washers',
-    frequency: 'Frequent Daily Shuttle Deliveries',
-    logo: '/images/clients/zf-rane client.jpg',
-    coords: [12.8420, 80.0540],
-    route: [
-      [12.7937, 80.0253],
-      [12.8120, 80.0380],
-      [12.8420, 80.0540],
-    ],
-  },
-  {
-    id: 'brakesindia',
-    name: 'TVS Brakes India (IVS)',
-    tier: 'Automotive Braking Systems Giant',
+    id: 'tvs-lucas',
+    name: 'Lucas TVS Ltd.',
+    tier: 'Automotive Electrical & Starter Systems',
     hub: 'Padi Industrial Estate, Chennai',
+    region: 'chennai-corridor',
+    distanceKm: 41,
+    transitTime: '52 mins',
+    highway: 'Chennai Inner Ring Road & GST Road',
+    products: 'Starter motor pole shoes, bracket pressings & alternator components',
+    frequency: 'Daily Multi-Point Logistics',
+    logo: '/images/clients/tvs-motor-company-client.jpg',
+    coords: [13.0980, 80.1830],
+    curveDir: 1,
+    curveBend: 0.24,
+  },
+  {
+    id: 'brakes-india',
+    name: 'Brakes India (TVS / TSF Group)',
+    tier: 'Braking Systems Tier-1 Global Leader',
+    hub: 'Padi / Sholinghur Corridor, Tamil Nadu',
     region: 'chennai-corridor',
     distanceKm: 44,
     transitTime: '55 mins',
-    highway: 'NH 45 & Chennai Inner Ring Road',
-    products: 'Brake caliper brackets, parking brake levers & fine blanked backing plates',
-    frequency: 'Daily Synchronized Consignments',
-    logo: '/images/clients/brakes-india-ivs-client.jpg',
-    coords: [13.0950, 80.1830],
-    route: [
-      [12.7937, 80.0253],
-      [12.8550, 80.0650],
-      [12.9250, 80.1150],
-      [12.9980, 80.1750],
-      [13.0450, 80.1820],
-      [13.0950, 80.1830],
-    ],
+    highway: 'NH 48 & Chennai Bypass Link',
+    products: 'Fine blanked brake actuation levers, caliper plates & backing stampings',
+    frequency: 'Dedicated JIT Line Supply',
+    logo: '/images/clients/brakes-india-client.jpg',
+    coords: [13.1040, 80.1720],
+    curveDir: 1,
+    curveBend: 0.32,
   },
   {
-    id: 'abishowatech',
-    name: 'ABI Showatech',
-    tier: 'Precision Machined & Stamped Assemblies',
-    hub: 'Sholinghur / Ranipet Industrial Complex',
+    id: 'caterpillar',
+    name: 'Caterpillar India',
+    tier: 'Heavy Construction & Mining Equipment OEM',
+    hub: 'Thiruvallur Industrial Corridor',
+    region: 'chennai-corridor',
+    distanceKm: 58,
+    transitTime: '1 hr 15 mins',
+    highway: 'Chennai Outer Ring Road (ORR) 6-Lane Expressway',
+    products: 'Heavy gauge mounting plates, excavator levers & hydraulic brackets',
+    frequency: 'Bi-Weekly Heavy Freight Dispatch',
+    logo: '/images/clients/caterpillar-client.jpg',
+    coords: [13.1380, 79.9120],
+    curveDir: -1,
+    curveBend: 0.24,
+  },
+  {
+    id: 'mitsuba',
+    name: 'Mitsuba Sical India',
+    tier: 'Automotive Electrical & Wiper Motors',
+    hub: 'Gummidipoondi SIPCOT Industrial Complex',
+    region: 'chennai-corridor',
+    distanceKm: 85,
+    transitTime: '1 hr 40 mins',
+    highway: 'NH 16 Chennai-Kolkata Highway',
+    products: 'Precision fine blanked wiper linkage arms & motor housing plates',
+    frequency: 'Weekly Scheduled Supply Route',
+    logo: '/images/clients/mitsuba-client.jpg',
+    coords: [13.4020, 80.1250],
+    curveDir: 1,
+    curveBend: 0.26,
+  },
+  {
+    id: 'bosch',
+    name: 'Bosch Automotive India',
+    tier: 'Global Mobility Solutions Tier-1',
+    hub: 'Adugodi / Bidadi, Bengaluru, Karnataka',
     region: 'regional-south',
-    distanceKm: 88,
-    transitTime: '1 hr 45 mins',
-    highway: 'NH 48 Chennai-Bengaluru Highway',
-    products: 'Braking system plates, transmission components & deep drawn cups',
-    frequency: 'Daily Inter-District Freight Dispatch',
-    logo: '/images/clients/ABI showatech.jpg',
-    coords: [13.1120, 79.4220],
-    route: [
-      [12.7937, 80.0253],
-      [12.8350, 80.0050],
-      [12.9800, 79.9450],
-      [12.9850, 79.7000],
-      [13.0450, 79.5500],
-      [13.1120, 79.4220],
-    ],
+    distanceKm: 320,
+    transitTime: '5 hrs 30 mins',
+    highway: 'NH 48 Bengaluru-Chennai Expressway',
+    products: 'Fuel injection pump plates, sensor brackets & precision washers',
+    frequency: 'Bi-Weekly Inter-State Express Logistics',
+    logo: '/images/clients/bosch-client.jpg',
+    coords: [12.9420, 77.6080],
+    curveDir: -1,
+    curveBend: 0.25,
   },
   {
-    id: 'saurer',
-    name: 'Saurer Textile Solutions',
-    tier: 'High-Precision Industrial Machinery',
-    hub: 'Coimbatore Industrial Engineering Corridor',
+    id: 'tvs-hosur',
+    name: 'TVS Motor Company (Hosur)',
+    tier: 'Two-Wheeler & Commercial OEM',
+    hub: 'SIPCOT Industrial Complex, Hosur, Tamil Nadu',
     region: 'regional-south',
-    distanceKm: 475,
-    transitTime: '8 hrs',
-    highway: 'NH 38 & NH 544 Express Corridor',
-    products: 'High-speed textile spinning fine blanked mechanisms & cam plates',
-    frequency: 'Weekly Dedicated High-Value Logistics',
-    logo: '/images/clients/Saurer-client.jpg',
-    coords: [11.0180, 76.9580],
-    route: [
-      [12.7937, 80.0253],
-      [12.3500, 79.8500],
-      [11.9500, 79.5000],
-      [11.6600, 78.1500],
-      [11.3500, 77.7200],
-      [11.0180, 76.9580],
-    ],
+    distanceKm: 285,
+    transitTime: '4 hrs 50 mins',
+    highway: 'NH 48 Expressway Corridor',
+    products: 'Motorcycle brake levers, clutch actuation pressings & sprocket plates',
+    frequency: 'Tri-Weekly Inter-City Scheduled Shuttle',
+    logo: '/images/clients/tvs-motor-company-client.jpg',
+    coords: [12.7350, 77.8280],
+    curveDir: 1,
+    curveBend: 0.22,
   },
   {
-    id: 'irclient',
-    name: 'Ingersoll Rand (IR)',
-    tier: 'Global Industrial Air & Power OEM',
-    hub: 'Narhe Auto Engineering Cluster, Pune',
+    id: 'tata-pune',
+    name: 'Tata Motors & Tier-1 Hub',
+    tier: 'Automotive OEM Passenger & EV Division',
+    hub: 'Pimpri-Chinchwad / Chakan Auto Cluster, Pune, Maharashtra',
     region: 'national-hub',
-    distanceKm: 1180,
-    transitTime: '22 hrs',
-    highway: 'Golden Quadrilateral NH 48',
-    products: 'Compressor reed valves, high-pressure fine blanked plates',
-    frequency: 'Dedicated Interstate Express Logistics',
-    logo: '/images/clients/IR-client.jpg',
-    coords: [18.5200, 73.8560],
-    route: [
-      [12.7937, 80.0253],
-      [12.9700, 79.9500],
-      [12.9700, 77.5900],
-      [15.3600, 75.1200],
-      [16.8500, 74.5800],
-      [18.5200, 73.8560],
-    ],
+    distanceKm: 1140,
+    transitTime: '20 hrs',
+    highway: 'AH 47 / NH 48 National Golden Quadrilateral',
+    products: 'Fine blanked EV battery structural brackets & transmission components',
+    frequency: 'Scheduled Multi-Axle Container Dispatch',
+    logo: '/images/clients/tata-motors-client.jpg',
+    coords: [18.7250, 73.8350],
+    curveDir: -1,
+    curveBend: 0.26,
+  },
+  {
+    id: 'maruti-ncr',
+    name: 'Maruti Suzuki Tier-1 Hub',
+    tier: 'Passenger Vehicle Tier-1 Network',
+    hub: 'Manesar / IMT Gurgaon Automotive Belt, Haryana',
+    region: 'national-hub',
+    distanceKm: 2180,
+    transitTime: '36 hrs',
+    highway: 'NH 44 North-South Highway Corridor',
+    products: 'High-precision seating recliner gears & sub-assembly stampings',
+    frequency: 'Dedicated All-India Logistics Corridor',
+    logo: '/images/clients/maruti-suzuki-client.jpg',
+    coords: [28.3580, 76.9320],
+    curveDir: -1,
+    curveBend: 0.20,
   },
 ]
 
 export default function ClientRouteMap() {
   const mapContainerRef = useRef(null)
   const mapInstanceRef = useRef(null)
-  const polylinesRef = useRef({})
   const markersRef = useRef({})
 
   const [selectedClientId, setSelectedClientId] = useState('daimler')
   const [activeFilter, setActiveFilter] = useState('all')
+  const [activeViewMode, setActiveViewMode] = useState('chennai') // 'chennai' or 'india'
   const [isTouring, setIsTouring] = useState(false)
+  const [animKey, setAnimKey] = useState(1)
+  const [arcPaths, setArcPaths] = useState([])
   const tourTimerRef = useRef(null)
 
   const selectedClient = clientsData.find((c) => c.id === selectedClientId) || clientsData[0]
 
-  // Filtered clients
+  // Filtered clients list
   const filteredClients = clientsData.filter((c) => {
     if (activeFilter === 'all') return true
     if (activeFilter === 'oragadam-sriperumbudur') return c.region === 'oragadam-sriperumbudur'
@@ -353,42 +278,88 @@ export default function ClientRouteMap() {
     return true
   })
 
-  // Initialize Map
+  // Function to calculate SVG Bézier curves from GPS points to container pixel coordinates
+  const calculateArcCurves = () => {
+    const map = mapInstanceRef.current
+    if (!map) return
+
+    try {
+      const originPt = map.latLngToContainerPoint(ATV_ORIGIN.coords)
+
+      const paths = clientsData.map((client, index) => {
+        const clientPt = map.latLngToContainerPoint(client.coords)
+        const dx = clientPt.x - originPt.x
+        const dy = clientPt.y - originPt.y
+        const dist = Math.sqrt(dx * dx + dy * dy)
+
+        if (dist === 0) {
+          return { id: client.id, d: '', originPt, clientPt, dist: 0, index }
+        }
+
+        // Normal perpendicular vector
+        const nx = -dy / dist
+        const ny = dx / dist
+
+        // Calculate control point with client-specific curve direction and bend
+        const bend = client.curveBend || 0.25
+        const dir = client.curveDir || 1
+        const cx = (originPt.x + clientPt.x) / 2 + nx * dist * bend * dir
+        const cy = (originPt.y + clientPt.y) / 2 + ny * dist * bend * dir
+
+        // Exact Quadratic Bézier Curve Path
+        const d = `M ${originPt.x.toFixed(1)} ${originPt.y.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${clientPt.x.toFixed(1)} ${clientPt.y.toFixed(1)}`
+
+        return {
+          id: client.id,
+          d,
+          originPt,
+          clientPt,
+          dist,
+          index,
+        }
+      })
+
+      setArcPaths(paths)
+    } catch {
+      // Map may still be initialising
+    }
+  }
+
+  // Initialize Leaflet Map with CartoDB Positron (clean slate-grey / white minimalist aesthetic)
   useEffect(() => {
     if (!mapContainerRef.current) return
     if (mapInstanceRef.current) return
 
-    // Create Leaflet Map centered on Chennai industrial belt
+    // Center on Chennai automotive belt
     const map = L.map(mapContainerRef.current, {
-      center: [12.8700, 79.9800],
-      zoom: 11,
+      center: [12.9100, 80.0100],
+      zoom: 10,
       zoomControl: false,
       scrollWheelZoom: false,
     })
 
-    // Custom Zoom control in bottom-right
     L.control.zoom({ position: 'bottomright' }).addTo(map)
 
-    // Standard OpenStreetMap Tile Layer (100% free, crisp, no API key watermark)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19,
+    // Esri World Light Gray Base (clean slate-grey land & clean ocean, zero watermark, 100% free)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+      maxZoom: 16,
     }).addTo(map)
 
-    // 1. Add ATV Origin Marker
+    // ATV Origin Pin (Maraimalai Nagar Hub)
     const originIcon = L.divIcon({
-      className: 'atv-origin-marker',
+      className: 'atv-origin-node',
       html: `
-        <div class="atv-pin-wrapper">
-          <div class="atv-pin-pulse"></div>
-          <div class="atv-pin-badge">
+        <div class="atv-hub-wrapper">
+          <div class="atv-hub-radar-ring"></div>
+          <div class="atv-hub-dot">
             <i class="fas fa-industry"></i>
           </div>
-          <span class="atv-pin-label">ATV Origin Hub</span>
+          <span class="atv-hub-label">ATV Origin Hub</span>
         </div>
       `,
-      iconSize: [44, 44],
-      iconAnchor: [22, 22],
+      iconSize: [46, 46],
+      iconAnchor: [23, 23],
     })
 
     const originMarker = L.marker(ATV_ORIGIN.coords, { icon: originIcon, zIndexOffset: 1000 }).addTo(map)
@@ -406,21 +377,22 @@ export default function ClientRouteMap() {
       </div>
     `)
 
-    // 2. Add Client Markers & Base Route Lines
-    clientsData.forEach((c) => {
-      // Custom client pin
+    // Client Destination Markers (Amber / Golden Dots with Client Labels popping in)
+    clientsData.forEach((c, idx) => {
       const clientIcon = L.divIcon({
-        className: `client-map-marker client-marker-${c.id}`,
+        className: `client-destination-marker marker-${c.id}`,
         html: `
-          <div class="client-pin-wrapper" id="client-pin-${c.id}">
-            <div class="client-pin-thumb">
-              <img src="${c.logo}" alt="${c.name}" onerror="this.style.display='none'" />
+          <div class="client-destination-pin" id="dest-pin-${c.id}" style="animation-delay: ${idx * 60 + 600}ms">
+            <div class="dest-gold-dot"></div>
+            <div class="dest-gold-pulse"></div>
+            <div class="dest-name-tag">
+              <span class="dest-client-name">${c.name.split(' ')[0]}</span>
+              <span class="dest-client-km">${c.distanceKm} km</span>
             </div>
-            <div class="client-pin-dist">${c.distanceKm} km</div>
           </div>
         `,
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
+        iconSize: [120, 36],
+        iconAnchor: [6, 18],
       })
 
       const marker = L.marker(c.coords, { icon: clientIcon }).addTo(map)
@@ -429,24 +401,18 @@ export default function ClientRouteMap() {
       })
 
       markersRef.current[c.id] = marker
-
-      // Draw route polyline
-      const polyline = L.polyline(c.route, {
-        color: '#60A5FA',
-        weight: 3,
-        opacity: 0.45,
-        dashArray: '6, 8',
-        lineCap: 'round',
-      }).addTo(map)
-
-      polyline.on('click', () => {
-        setSelectedClientId(c.id)
-      })
-
-      polylinesRef.current[c.id] = polyline
     })
 
     mapInstanceRef.current = map
+
+    // Synchronize curved SVG paths with map movement & zoom
+    map.on('move', calculateArcCurves)
+    map.on('zoom', calculateArcCurves)
+    map.on('viewreset', calculateArcCurves)
+    map.on('resize', calculateArcCurves)
+
+    // Initial calculation
+    setTimeout(calculateArcCurves, 200)
 
     return () => {
       map.remove()
@@ -454,54 +420,64 @@ export default function ClientRouteMap() {
     }
   }, [])
 
-  // Highlight Selected Route and animate map
+  // Highlight active client pin & re-render curves on selection
   useEffect(() => {
-    const map = mapInstanceRef.current
-    if (!map || !selectedClient) return
-
-    // Update polylines styling
-    clientsData.forEach((c) => {
-      const poly = polylinesRef.current[c.id]
-      if (!poly) return
-
-      if (c.id === selectedClient.id) {
-        poly.setStyle({
-          color: '#1D4ED8',
-          weight: 6,
-          opacity: 0.95,
-          dashArray: null,
-        })
-        poly.bringToFront()
-      } else {
-        poly.setStyle({
-          color: '#93C5FD',
-          weight: 2.5,
-          opacity: 0.35,
-          dashArray: '5, 8',
-        })
-      }
+    document.querySelectorAll('.client-destination-pin').forEach((el) => {
+      el.classList.remove('active-destination')
     })
-
-    // Highlight active marker class
-    document.querySelectorAll('.client-pin-wrapper').forEach((el) => {
-      el.classList.remove('active-pin')
-    })
-    const activePinEl = document.getElementById(`client-pin-${selectedClient.id}`)
-    if (activePinEl) {
-      activePinEl.classList.add('active-pin')
+    const activePin = document.getElementById(`dest-pin-${selectedClientId}`)
+    if (activePin) {
+      activePin.classList.add('active-destination')
     }
-
-    // Zoom/pan map to encompass both origin and selected client
-    const bounds = L.latLngBounds([ATV_ORIGIN.coords, selectedClient.coords])
-    map.flyToBounds(bounds, {
-      padding: [80, 80],
-      maxZoom: 13,
-      duration: 1.2,
-      easeLinearity: 0.25,
-    })
   }, [selectedClientId])
 
-  // Auto-tour routes handler
+  // Replay Radiating Arcs Animation (fans out curves from Maraimalai Nagar to all clients)
+  const handleReplayArcs = () => {
+    setAnimKey((prev) => prev + 1)
+    setTimeout(calculateArcCurves, 50)
+  }
+
+  // View Presets: Chennai Cluster vs All-India
+  const handleSetView = (mode) => {
+    const map = mapInstanceRef.current
+    if (!map) return
+
+    setActiveViewMode(mode)
+    if (mode === 'chennai') {
+      // Frame Chennai Automotive Cluster (11 Hubs: Oragadam, Sriperumbudur, Padi, Thiruvallur, Gummidipoondi)
+      const chennaiClients = clientsData.filter((c) => c.region === 'chennai-corridor' || c.region === 'oragadam-sriperumbudur')
+      const coords = [ATV_ORIGIN.coords, ...chennaiClients.map((c) => c.coords)]
+      map.flyToBounds(L.latLngBounds(coords), {
+        padding: [60, 60],
+        maxZoom: 11,
+        duration: 1.2,
+      })
+    } else {
+      // Frame All-India (including Hosur, Bengaluru, Pune, Maruti Suzuki Gurgaon)
+      const allCoords = [ATV_ORIGIN.coords, ...clientsData.map((c) => c.coords)]
+      map.flyToBounds(L.latLngBounds(allCoords), {
+        padding: [60, 60],
+        duration: 1.5,
+      })
+    }
+  }
+
+  // Select Client & Pan smoothly to corridor
+  const handleSelectClient = (clientId) => {
+    setSelectedClientId(clientId)
+    const map = mapInstanceRef.current
+    const client = clientsData.find((c) => c.id === clientId)
+    if (!map || !client) return
+
+    const bounds = L.latLngBounds([ATV_ORIGIN.coords, client.coords])
+    map.flyToBounds(bounds, {
+      padding: [80, 80],
+      maxZoom: 12,
+      duration: 1.1,
+    })
+  }
+
+  // Auto-tour Handler
   const toggleTour = () => {
     if (isTouring) {
       clearInterval(tourTimerRef.current)
@@ -511,7 +487,7 @@ export default function ClientRouteMap() {
       let idx = clientsData.findIndex((c) => c.id === selectedClientId)
       tourTimerRef.current = setInterval(() => {
         idx = (idx + 1) % clientsData.length
-        setSelectedClientId(clientsData[idx].id)
+        handleSelectClient(clientsData[idx].id)
       }, 4000)
     }
   }
@@ -520,44 +496,31 @@ export default function ClientRouteMap() {
     return () => clearInterval(tourTimerRef.current)
   }, [])
 
-  // Reset to full view
-  const handleResetOverview = () => {
-    const map = mapInstanceRef.current
-    if (!map) return
-    const allCoords = [ATV_ORIGIN.coords, ...clientsData.map((c) => c.coords)]
-    map.flyToBounds(L.latLngBounds(allCoords), {
-      padding: [50, 50],
-      maxZoom: 11,
-      duration: 1.2,
-    })
-  }
-
-  // Next / Prev client
   const handleNextClient = () => {
     const currIdx = clientsData.findIndex((c) => c.id === selectedClientId)
     const nextIdx = (currIdx + 1) % clientsData.length
-    setSelectedClientId(clientsData[nextIdx].id)
+    handleSelectClient(clientsData[nextIdx].id)
   }
 
   const handlePrevClient = () => {
     const currIdx = clientsData.findIndex((c) => c.id === selectedClientId)
     const prevIdx = (currIdx - 1 + clientsData.length) % clientsData.length
-    setSelectedClientId(clientsData[prevIdx].id)
+    handleSelectClient(clientsData[prevIdx].id)
   }
 
   return (
     <section className="section client-routes-section" id="client-routes">
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: 40 }}>
+        <div style={{ textAlign: 'center', marginBottom: 35 }}>
           <span className="section-label" data-aos="fade-up">Logistics & Supply Reach</span>
           <h2 className="section-title" data-aos="fade-up" data-aos-delay="100">
             Our Clients <span>& Delivery Corridors</span>
           </h2>
-          <div className="section-divider" style={{ margin: '0 auto 20px' }} data-aos="fade-up" data-aos-delay="150"></div>
-          <p className="section-subtitle" style={{ margin: '0 auto' }} data-aos="fade-up" data-aos-delay="200">
-            Real-time delivery routes from our Maraimalai Nagar Manufacturing Plant to top automotive OEMs
-            and Tier-1 assembly hubs across Chennai, Tamil Nadu, and India.
+          <div className="section-divider" style={{ margin: '0 auto 18px' }} data-aos="fade-up" data-aos-delay="150"></div>
+          <p className="section-subtitle" style={{ margin: '0 auto', maxWidth: 880 }} data-aos="fade-up" data-aos-delay="200">
+            Dynamic delivery arcs radiating from our <strong>Maraimalai Nagar Manufacturing Plant</strong> to top automotive OEMs
+            and Tier-1 assembly hubs across the Chennai automotive corridor, Tamil Nadu, and India.
           </p>
         </div>
 
@@ -571,10 +534,10 @@ export default function ClientRouteMap() {
             </div>
           </div>
           <div className="corridor-stat">
-            <i className="fas fa-truck-moving" style={{ color: '#2563EB' }}></i>
+            <i className="fas fa-network-wired" style={{ color: '#E53935' }}></i>
             <div>
-              <strong>15 Key Client Routes</strong>
-              <span>JIT Synchronized Logistics</span>
+              <strong>15 Automotive Hubs</strong>
+              <span>Radiating Direct Arc Supply</span>
             </div>
           </div>
           <div className="corridor-stat">
@@ -593,7 +556,7 @@ export default function ClientRouteMap() {
           </div>
         </div>
 
-        {/* Map Interactive Toolbar */}
+        {/* Interactive Map Toolbar with View Modes & Arc Replay */}
         <div className="map-toolbar" data-aos="fade-up" data-aos-delay="250">
           {/* Filter Pills */}
           <div className="map-filter-pills">
@@ -627,8 +590,35 @@ export default function ClientRouteMap() {
             </button>
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons: Arc Replay & View Switcher */}
           <div className="map-actions">
+            <button
+              type="button"
+              className="btn btn-sm btn-replay-arc"
+              onClick={handleReplayArcs}
+              title="Watch all curved arcs radiate outward from Maraimalai Nagar"
+            >
+              <i className="fas fa-redo"></i> Replay Arc Flow
+            </button>
+
+            <button
+              type="button"
+              className={`btn btn-sm ${activeViewMode === 'chennai' ? 'btn-primary' : 'btn-outline'}`}
+              onClick={() => handleSetView('chennai')}
+              title="Zoom to Chennai Automotive Cluster"
+            >
+              <i className="fas fa-crosshairs"></i> Chennai Belt
+            </button>
+
+            <button
+              type="button"
+              className={`btn btn-sm ${activeViewMode === 'india' ? 'btn-primary' : 'btn-outline'}`}
+              onClick={() => handleSetView('india')}
+              title="Zoom out to show All-India network"
+            >
+              <i className="fas fa-globe-asia"></i> Pan-India View
+            </button>
+
             <button
               type="button"
               className={`btn btn-sm ${isTouring ? 'btn-primary' : 'btn-outline'}`}
@@ -636,25 +626,83 @@ export default function ClientRouteMap() {
               style={{ fontSize: 13 }}
             >
               <i className={`fas ${isTouring ? 'fa-pause' : 'fa-play'}`}></i>
-              {isTouring ? 'Pause Tour' : 'Auto-Tour Routes'}
-            </button>
-            <button
-              type="button"
-              className="btn btn-sm btn-outline"
-              onClick={handleResetOverview}
-              style={{ fontSize: 13 }}
-            >
-              <i className="fas fa-compress-arrows-alt"></i> Reset Overview
+              {isTouring ? 'Pause Tour' : 'Auto-Tour'}
             </button>
           </div>
         </div>
 
-        {/* Main Map Box + Route Intelligence Overlay */}
-        <div className="client-map-wrapper" data-aos="fade-up" data-aos-delay="300">
+        {/* =========================================================
+            MAIN ANIMATED ARC MAP (Exact Radiating Curves like Brakes India)
+           ========================================================= */}
+        <div className="client-map-wrapper animated-arc-map-wrapper" data-aos="fade-up" data-aos-delay="300">
           {/* Leaflet DOM container */}
           <div className="client-map-canvas" ref={mapContainerRef}></div>
 
-          {/* Active Route Floating Card */}
+          {/* SVG Overlay for Radiating Curved Bézier Arcs */}
+          <svg className="radiating-arcs-svg-layer" key={animKey}>
+            <defs>
+              {/* Gradient for Arc stroke */}
+              <linearGradient id="arcGlowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#E53935" stopOpacity="0.95" />
+                <stop offset="70%" stopColor="#FF3B30" stopOpacity="0.85" />
+                <stop offset="100%" stopColor="#F59E0B" stopOpacity="1" />
+              </linearGradient>
+
+              {/* Gradient for active selected corridor */}
+              <linearGradient id="activeArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#B91C1C" stopOpacity="1" />
+                <stop offset="50%" stopColor="#E53935" stopOpacity="1" />
+                <stop offset="100%" stopColor="#FF3B30" stopOpacity="1" />
+              </linearGradient>
+
+              {/* Glow filter */}
+              <filter id="arcGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            {/* Render all animated curved arcs */}
+            {arcPaths.map((arc) => {
+              if (!arc.d) return null
+              const isSelected = arc.id === selectedClientId
+              const isFilteredOut = activeFilter !== 'all' && !filteredClients.some((c) => c.id === arc.id)
+
+              if (isFilteredOut) return null
+
+              return (
+                <g key={arc.id} className={`arc-group ${isSelected ? 'selected-arc-group' : ''}`}>
+                  {/* Base Track Line */}
+                  <path
+                    d={arc.d}
+                    className="arc-base-track"
+                    onClick={() => handleSelectClient(arc.id)}
+                  />
+
+                  {/* Radiating Curved Animated Arc Line (Shoots outward from Maraimalai Nagar) */}
+                  <path
+                    d={arc.d}
+                    className={`radiating-curve-arc ${isSelected ? 'active-radiating-arc' : ''}`}
+                    style={{
+                      animationDelay: `${arc.index * 65}ms`,
+                    }}
+                    onClick={() => handleSelectClient(arc.id)}
+                  />
+
+                  {/* Flowing Energy Particle along Arc */}
+                  <path
+                    d={arc.d}
+                    className="flowing-energy-pulse"
+                    style={{
+                      animationDelay: `${arc.index * 65 + 300}ms`,
+                    }}
+                  />
+                </g>
+              )
+            })}
+          </svg>
+
+          {/* Active Route Intelligence Floating Card */}
           {selectedClient && (
             <div className="active-route-card">
               <div className="route-card-header">
@@ -684,7 +732,7 @@ export default function ClientRouteMap() {
               <div className="route-metrics-grid">
                 <div className="route-metric-badge">
                   <span className="metric-label">Direct Distance</span>
-                  <strong className="metric-val" style={{ color: '#1D4ED8' }}>
+                  <strong className="metric-val" style={{ color: '#E53935' }}>
                     <i className="fas fa-road" style={{ marginRight: 4 }}></i>
                     {selectedClient.distanceKm} km
                   </strong>
@@ -713,7 +761,7 @@ export default function ClientRouteMap() {
                   <span className="route-detail-val">{selectedClient.highway}</span>
                 </div>
                 <div className="route-detail-row">
-                  <span className="route-detail-label">Components:</span>
+                  <span className="route-detail-label">Supplied Parts:</span>
                   <span className="route-detail-val" style={{ color: '#1E293B', fontWeight: 600 }}>
                     {selectedClient.products}
                   </span>
@@ -724,7 +772,7 @@ export default function ClientRouteMap() {
                 </div>
               </div>
 
-              {/* Action */}
+              {/* Action Button */}
               <div style={{ marginTop: 16 }}>
                 <a
                   href={`https://www.google.com/maps/dir/?api=1&origin=${ATV_ORIGIN.coords[0]},${ATV_ORIGIN.coords[1]}&destination=${selectedClient.coords[0]},${selectedClient.coords[1]}`}
@@ -738,13 +786,32 @@ export default function ClientRouteMap() {
               </div>
             </div>
           )}
+
+          {/* Map Footer Legend Strip */}
+          <div className="arc-map-legend-bar">
+            <div className="legend-items-group">
+              <span className="legend-chip">
+                <span className="legend-symbol origin"></span> Maraimalai Nagar Manufacturing HQ
+              </span>
+              <span className="legend-chip">
+                <span className="legend-symbol arc"></span> Radiating JIT Delivery Arcs
+              </span>
+              <span className="legend-chip">
+                <span className="legend-symbol dest"></span> OEM &amp; Tier-1 Assembly Plants
+              </span>
+            </div>
+            <div className="legend-hint">
+              <i className="fas fa-mouse-pointer"></i>
+              <span>Click any curved arc or client pin to inspect delivery corridor</span>
+            </div>
+          </div>
         </div>
 
-        {/* Client Selection Strip Below Map */}
+        {/* Client Selection Cards Strip Below Map */}
         <div className="clients-selector-strip" data-aos="fade-up" data-aos-delay="350">
           <div className="selector-instruction">
             <i className="fas fa-hand-pointer"></i>
-            <span>Click any client below to inspect their direct delivery corridor from ATV:</span>
+            <span>Select any client below to inspect their direct delivery corridor from ATV:</span>
           </div>
 
           <div className="clients-horizontal-cards">
@@ -754,7 +821,7 @@ export default function ClientRouteMap() {
                 <div
                   key={c.id}
                   className={`client-selector-card ${isSelected ? 'selected' : ''}`}
-                  onClick={() => setSelectedClientId(c.id)}
+                  onClick={() => handleSelectClient(c.id)}
                 >
                   <div className="client-thumb-box">
                     <img src={c.logo} alt={c.name} loading="lazy" />

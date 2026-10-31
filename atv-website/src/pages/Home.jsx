@@ -106,7 +106,18 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero" id="home-hero" ref={heroRef}>
         <div className="hero-bg">
-          <img src="/images/manufacturing/manufacturing-hall.jpg" alt="ATV Precision Manufacturing Facility" loading="eager" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/manufacturing/manufacturing-hall.jpg"
+            className="hero-video-bg"
+          >
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div className="hero-overlay"></div>
         <div className="container">
