@@ -5,7 +5,7 @@ export default function PageHero({ title, crumbs, bgImage = '/images/manufacturi
     <div
       className="page-hero"
       style={{
-        backgroundImage: `linear-gradient(135deg, rgba(7, 19, 36, 0.72) 0%, rgba(11, 25, 44, 0.58) 50%, rgba(30, 58, 138, 0.52) 100%), url("${bgImage}")`,
+        backgroundImage: `linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(20, 15, 20, 0.65) 50%, rgba(127, 29, 29, 0.55) 100%), url("${bgImage}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

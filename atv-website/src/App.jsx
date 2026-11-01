@@ -14,6 +14,7 @@ import Manufacturing from './pages/Manufacturing'
 import Products from './pages/Products'
 import Certificates from './pages/Certificates'
 import Contact from './pages/Contact'
+import Admin from './pages/Admin'
 
 export default function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
       <Footer />

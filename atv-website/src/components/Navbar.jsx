@@ -50,9 +50,6 @@ export default function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li>
-              <Link to="/contact" className="nav-link nav-cta">Get a Quote</Link>
-            </li>
           </ul>
 
           {/* Hamburger */}

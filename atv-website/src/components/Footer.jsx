@@ -11,13 +11,10 @@ const quickLinks = [
 
 const products = [
   'Brake Parts',
-  'Turbocharger Parts',
-  'Transmission Parts',
-  'Seating System Parts',
-  'Engine & Mounting Parts',
-  'Disc Brake Parts',
-  'Daimler Truck Parts',
-  'Exhaust Parts',
+  'Truck Parts',
+  'Car Parts',
+  'Bike Parts',
+  'Regular Products (Turbocharger)',
 ]
 
 export default function Footer() {
@@ -108,7 +105,6 @@ export default function Footer() {
         <div className="container">
           <div className="footer-bottom">
             <span>© 2025 ATV Precision Components Pvt. Ltd. All Rights Reserved.</span>
-            <span>Designed with <i className="fas fa-heart" style={{ color: '#e53935' }}></i> for Precision Manufacturing</span>
           </div>
         </div>
       </div>

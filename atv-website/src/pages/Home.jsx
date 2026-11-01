@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
-import ClientRouteMap from '../components/ClientRouteMap'
+import ExportWorldMap from '../components/ExportWorldMap'
 
 const features = [
   {
@@ -30,35 +30,35 @@ const applications = [
     img: '/images/products/car-parts.jpg',
     tag: 'Automotive',
     title: 'Passenger Cars',
-    items: ['Turbocharger Parts', 'Transmission Parts', 'Seating System Parts', 'Brake System Parts'],
+    items: ['Transmission Parts', 'Engine Mounting Parts', 'Brake System Parts'],
   },
   {
     img: '/images/products/bike-parts.jpg',
     tag: 'Two-Wheelers',
     title: 'Motorcycles',
-    items: ['Transmission Parts', 'Exhaust Parts', 'Engine & Transmission Parts', 'Disc Brake Parts'],
+    items: ['Exhaust Parts', 'Transmission Parts', 'Engine Mounting Parts'],
   },
   {
     img: '/images/products/Truck-parts.jpg',
     tag: 'Commercial Vehicles',
     title: 'Trucks',
-    items: ['Chassis & Body Parts', 'Engine & Mounting Parts', 'Brake System Parts', 'Other Genuine Parts'],
+    items: ['Daimler Truck Parts', 'Engine Mounting Parts', 'Heavy Chassis Pressings'],
   },
 ]
 
 const clients = [
   { name: 'Woosu Automotive India', img: '/images/clients/woosu-india-client.jpg' },
   { name: 'Delphi-TVS Technologies', img: '/images/clients/delphi-tvs-tech-client.jpg' },
-  { name: 'Nash Industries', img: '/images/clients/nash-industries client.jpg' },
+  { name: 'Nash Industries', img: '/images/clients/nash-industries-client.jpg' },
   { name: 'TVS Brakes India', img: '/images/clients/brakes-india-ivs-client.jpg' },
   { name: 'Gestamp', img: '/images/clients/gestamp-client.jpg' },
   { name: 'Enkei', img: '/images/clients/ENKEI-client.jpg' },
   { name: 'Garrett Advancing Motion', img: '/images/clients/garrett-advancing-motion-client.jpg' },
-  { name: 'ZF / Rane', img: '/images/clients/zf-rane client.jpg' },
+  { name: 'ZF / Rane', img: '/images/clients/zf-rane-client.jpg' },
   { name: 'Saurer', img: '/images/clients/Saurer-client.jpg' },
   { name: 'TEL Turbo Energy', img: '/images/clients/Tel-turbo-energy-client.jpg' },
   { name: 'Inzi Controls', img: '/images/clients/inzi-controls-client.jpg' },
-  { name: 'ABI Showatech', img: '/images/clients/ABI showatech.jpg' },
+  { name: 'ABI Showatech', img: '/images/clients/ABI-showatech.jpg' },
   { name: 'IR Client', img: '/images/clients/IR-client.jpg' },
 ]
 
@@ -70,17 +70,16 @@ const sustainPoints = [
 ]
 
 const stats = [
-  { val: '25+', label: 'Years of Excellence' },
+  { val: '15+', label: 'Years of Excellence' },
   { val: '100%', label: 'Tear-Free Edges' },
   { val: '50+', label: 'Global Clients' },
   { val: '5', label: 'Press Machines' },
 ]
 
 export default function Home() {
-  // Duplicate clients array for seamless loop
-  const allClients = [...clients, ...clients]
   const heroRef = useRef(null)
   const [scrollHidden, setScrollHidden] = useState(false)
+  const [showVideoModal, setShowVideoModal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,73 +102,85 @@ export default function Home() {
 
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="hero" id="home-hero" ref={heroRef}>
+      {/* ── HERO (tifineblanking.com style — centered, full-screen, play button prominent) ── */}
+      <section className="hero hero-centered" id="home-hero" ref={heroRef}>
         <div className="hero-bg">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/manufacturing/manufacturing-hall.jpg"
-            className="hero-video-bg"
-          >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <img
+            src="/images/manufacturinghall.jpg"
+            alt="ATV Precision Manufacturing Facility"
+            loading="eager"
+          />
         </div>
         <div className="hero-overlay"></div>
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-label" data-aos="fade-down">
-              <img src="/images/logo.svg" alt="ATV Emblem" className="hero-badge-logo" />
-              Fine Blanking Technology Leaders
-            </div>
-            <h1 data-aos="fade-up" data-aos-delay="100">
-              Passion for <em>Precision</em>
-            </h1>
-            <h2 data-aos="fade-up" data-aos-delay="200">
-              Cutting Edge of Fine Blanking Technology
-            </h2>
-            <p data-aos="fade-up" data-aos-delay="300">
-              Fine blanking produces close tolerance parts from materials of higher thickness.
-              Cut edges are 100% free of tear and in most cases parts are suitable for mechanical
-              function without the need for subsequent machining. This technology enables production
-              of 'Near net shape' and even ready-to-assemble sheet metal parts.
-            </p>
-            <div className="hero-btns" data-aos="fade-up" data-aos-delay="400">
-              <Link to="/products" className="btn btn-primary">
-                <i className="fas fa-th-large"></i> Explore Products
-              </Link>
-              <Link to="/contact" className="btn btn-outline">
-                <i className="fas fa-phone-alt"></i> Contact Us
-              </Link>
-            </div>
-            <div className="hero-stats" data-aos="fade-up" data-aos-delay="500">
-              {stats.map((s) => (
-                <div className="hero-stat" key={s.label}>
-                  <strong>{s.val}</strong>
-                  <span>{s.label}</span>
-                </div>
-              ))}
-            </div>
+
+        <div className="hero-centered-content">
+          {/* Company name — large centered title */}
+          <h1 data-aos="fade-up" data-aos-delay="100">
+            ATV Precision<br />Components
+          </h1>
+
+          {/* Tagline */}
+          <p data-aos="fade-up" data-aos-delay="250">
+            Passion for Precision — Cutting Edge of Fine Blanking Technology
+          </p>
+
+          {/* Big circular play button like tifineblanking.com */}
+          <div className="hero-play-block" data-aos="fade-up" data-aos-delay="400">
+            <button
+              type="button"
+              className="hero-big-play-btn"
+              onClick={() => setShowVideoModal(true)}
+              aria-label="View Presentation"
+            >
+              <i className="fas fa-play"></i>
+            </button>
+            <span className="hero-play-label">View Our Presentation</span>
           </div>
+        </div>
+
+        {/* Scroll arrow — bottom center, tifineblanking.com style */}
+        <div
+          className={`hero-scroll-arrow${scrollHidden ? ' hidden' : ''}`}
+          onClick={handleScrollClick}
+          role="button"
+          aria-label="Scroll down"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && handleScrollClick()}
+        >
+          <svg viewBox="0 0 40 40" className="hero-scroll-svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5"/>
+            <polyline points="12,16 20,25 28,16" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </section>
 
-      {/* Fixed scroll-down indicator — outside hero so position:fixed works cleanly */}
-      <div
-        className={`scroll-indicator${scrollHidden ? ' hidden' : ''}`}
-        onClick={handleScrollClick}
-        role="button"
-        aria-label="Scroll down"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && handleScrollClick()}
-      >
-        <i className="fas fa-chevron-down"></i>
-        <span>Scroll</span>
-      </div>
+      {/* ── VIDEO PRESENTATION POPUP MODAL (Refer: tifineblanking.com) ── */}
+      {showVideoModal && (
+        <div className="video-modal-backdrop" onClick={() => setShowVideoModal(false)}>
+          <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="video-modal-close"
+              onClick={() => setShowVideoModal(false)}
+              aria-label="Close presentation video"
+            >
+              <i className="fas fa-times"></i>
+            </button>
+            <div className="video-player-wrap">
+              <video
+                autoPlay
+                controls
+                playsInline
+                className="modal-video-player"
+              >
+                <source src="/videos/hero-bg.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* ── FEATURES ── */}
       <section className="section">
@@ -275,7 +286,7 @@ export default function Home() {
         <div className="container">
           <div className="material-edge">
             <div className="material-image" data-aos="fade-right">
-              <img src="/images/manufacturing/feintool-2.jpg" alt="Fine Blanking Material Edge" loading="lazy" />
+              <img src="/images/manufacturing/automation-machine.jpg" alt="Fine Blanking Material Edge" loading="lazy" />
               <div className="material-image-overlay"></div>
             </div>
             <div data-aos="fade-left">
@@ -315,19 +326,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CLIENT LOGO TICKER ── */}
-      <div style={{ background: '#fff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
-        <div className="clients-track">
-          {allClients.map((c, i) => (
-            <div className="client-logo" key={i}>
-              <img src={c.img} alt={c.name} title={c.name} loading="lazy" />
-            </div>
-          ))}
+      {/* ── CLIENT LOGO GRID (static rows) ── */}
+      <section className="section clients-grid-section">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: 44 }}>
+            <span className="section-label" data-aos="fade-up">Trusted By</span>
+            <h2 className="section-title" data-aos="fade-up" data-aos-delay="100">
+              Our <span>Clients</span>
+            </h2>
+            <div className="section-divider" style={{ margin: '0 auto' }} data-aos="fade-up" data-aos-delay="150"></div>
+          </div>
+          <div className="clients-logo-grid" data-aos="fade-up" data-aos-delay="200">
+            {clients.map((c) => (
+              <div className="client-grid-logo" key={c.name} title={c.name}>
+                <img src={c.img} alt={c.name} loading="lazy" />
+                <span className="client-grid-name">{c.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── REAL CLIENT ROUTE MAP FROM OUR LOCATION ── */}
-      <ClientRouteMap />
+      {/* ── EXPORTS GLOBAL WORLD MAP ── */}
+      <ExportWorldMap />
 
       {/* ── CTA BANNER ── */}
       <section className="cta-banner">

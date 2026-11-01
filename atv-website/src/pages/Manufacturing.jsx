@@ -19,7 +19,7 @@ const machines = [
     reverse: false,
   },
   {
-    img: '/images/manufacturing/feintool-2.jpg',
+    img: '/images/manufacturing/automation-machine.jpg',
     title: 'Automated Industrial Processing Machine',
     brand: 'Automated System',
     desc: 'Designed for controlled and consistent manufacturing operations. Its enclosed working area and integrated control panel enable operators to monitor and manage key machine parameters during production.',
@@ -86,15 +86,19 @@ const machines = [
 
 const qualityItems = [
   { icon: 'fas fa-flask', title: 'In-House Lab Testing', desc: 'Comprehensive metallurgical and material testing performed on-site for rapid quality feedback.' },
-  { icon: 'fas fa-ruler', title: 'Dimensional Inspection', desc: 'Precise dimensional verification using advanced measurement equipment to ensure tight tolerances.' },
-  { icon: 'fas fa-file-certificate', title: 'Material Certification', desc: 'All raw materials are certified and tested to meet fine blanking grade specifications.' },
+  { icon: 'fas fa-ruler-combined', title: 'Dimensional Inspection', desc: 'Precise dimensional verification using advanced measurement equipment to ensure tight tolerances.' },
+  { icon: 'fas fa-certificate', title: 'Material Certification', desc: 'All raw materials are certified and tested to meet fine blanking grade specifications.' },
   { icon: 'fas fa-chart-line', title: 'Process Control', desc: 'Statistical Process Control (SPC) ensures consistent quality throughout every production run.' },
 ]
 
 export default function Manufacturing() {
   return (
     <>
-      <PageHero title="Manufacturing" crumbs={[{ label: 'Manufacturing' }]} />
+      <PageHero
+        title="Manufacturing"
+        crumbs={[{ label: 'Manufacturing' }]}
+        bgImage="/images/manufacturing.jpg"
+      />
 
       {/* ── INTRO ── */}
       <section className="section">
