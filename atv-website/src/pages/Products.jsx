@@ -3,68 +3,12 @@ import PageHero from '../components/PageHero'
 
 const galleryItems = [
   { id: 'brake', name: 'Brake Parts', img: '/images/products/Brake-parts.jpg', subtitle: 'Precision Brake Components' },
-  { id: 'truck-engine', name: 'Truck Parts', img: '/images/products/Truck-parts.jpg', subtitle: 'Engine & Mounting Parts (Truck)' },
-  { id: 'truck-daimler', name: 'Truck Parts', img: '/images/products/Daimler-truck.jpg', subtitle: 'Daimler Truck Pressings' },
+  { id: 'truck', name: 'Truck Parts', img: '/images/products/Truck-parts.jpg', subtitle: 'Engine & Mounting Parts (Truck)' },
+  { id: 'daimler', name: 'Daimler Parts', img: '/images/products/Daimler-truck.jpg', subtitle: 'Daimler Truck Pressings' },
   { id: 'car', name: 'Car Parts', img: '/images/products/car-parts.jpg', subtitle: 'Transmission Components' },
   { id: 'bike', name: 'Bike Parts', img: '/images/products/bike-parts.jpg', subtitle: 'Exhaust Components' },
   { id: 'regular', name: 'Regular Products Client Buying from Us', img: '/images/products/client-regular-products.jpg', subtitle: 'Turbocharger Components' },
 ]
-
-function TruckPartsSlider({ onOpenLightbox }) {
-  const images = [
-    { src: '/images/products/Truck-parts.jpg', label: 'Engine Mounting (Truck)', galleryIdx: 1 },
-    { src: '/images/products/Daimler-truck.jpg', label: 'Daimler Truck Parts', galleryIdx: 2 },
-  ]
-  const [currentIdx, setCurrentIdx] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIdx((prev) => (prev + 1) % images.length)
-    }, 3500)
-    return () => clearInterval(timer)
-  }, [images.length])
-
-  return (
-    <div
-      className="product-card truck-merged-card"
-      data-aos="fade-up"
-      onClick={() => onOpenLightbox(images[currentIdx].galleryIdx)}
-      style={{ cursor: 'pointer' }}
-    >
-      <div className="product-image full-view-product-img slider-container">
-        {images.map((img, idx) => (
-          <img
-            key={img.src}
-            src={img.src}
-            alt={img.label}
-            className={`slider-img ${idx === currentIdx ? 'active' : ''}`}
-            loading="lazy"
-          />
-        ))}
-        <div className="slider-nav-pills" onClick={(e) => e.stopPropagation()}>
-          {images.map((img, idx) => (
-            <button
-              key={idx}
-              type="button"
-              className={`slider-pill ${idx === currentIdx ? 'active' : ''}`}
-              onClick={() => setCurrentIdx(idx)}
-              aria-label={`Slide to ${img.label}`}
-              title={img.label}
-            />
-          ))}
-        </div>
-        <div className="product-zoom-hint">
-          <i className="fas fa-search-plus"></i> View Full Photo
-        </div>
-      </div>
-      <div className="product-body" style={{ textAlign: 'center', padding: '20px 16px' }}>
-        <h3 style={{ fontSize: 20, margin: 0, fontWeight: 700, color: 'var(--heading-color)' }}>
-          Truck Parts
-        </h3>
-      </div>
-    </div>
-  )
-}
 
 const simpleProducts = [
   {
@@ -73,7 +17,18 @@ const simpleProducts = [
     title: 'Brake Parts',
     galleryIdx: 0,
   },
-  // Truck parts rendered via TruckPartsSlider component (galleryIdx 1 & 2)
+  {
+    id: 'truck',
+    img: '/images/products/Truck-parts.jpg',
+    title: 'Truck Parts',
+    galleryIdx: 1,
+  },
+  {
+    id: 'daimler',
+    img: '/images/products/Daimler-truck.jpg',
+    title: 'Daimler Parts',
+    galleryIdx: 2,
+  },
   {
     id: 'car',
     img: '/images/products/car-parts.jpg',
@@ -162,93 +117,30 @@ export default function Products() {
             </p>
           </div>
 
-          {/* Clean Simplified Products Grid: 1. Brake Parts, 2. Truck Parts, 3. Car Parts, 4. Bike Parts, 5. Regular Products */}
+          {/* Clean Simplified Products Grid: 6 Products */}
           <div className="products-grid full-view-products-grid">
-            {/* 1. Brake Parts */}
-            <div
-              className="product-card"
-              data-aos="fade-up"
-              onClick={() => setActiveIdx(simpleProducts[0].galleryIdx)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="product-image full-view-product-img">
-                <img src={simpleProducts[0].img} alt={simpleProducts[0].title} loading="lazy" />
-                <div className="product-zoom-hint">
-                  <i className="fas fa-search-plus"></i> View Full Photo
+            {simpleProducts.map((p, idx) => (
+              <div
+                key={p.id}
+                className="product-card"
+                data-aos="fade-up"
+                data-aos-delay={idx * 50}
+                onClick={() => setActiveIdx(p.galleryIdx)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="product-image full-view-product-img">
+                  <img src={p.img} alt={p.title} loading="lazy" />
+                  <div className="product-zoom-hint">
+                    <i className="fas fa-search-plus"></i> View Full Photo
+                  </div>
+                </div>
+                <div className="product-body" style={{ textAlign: 'center', padding: '20px 16px' }}>
+                  <h3 style={{ fontSize: 20, margin: 0, fontWeight: 700, color: 'var(--heading-color)' }}>
+                    {p.title}
+                  </h3>
                 </div>
               </div>
-              <div className="product-body" style={{ textAlign: 'center', padding: '20px 16px' }}>
-                <h3 style={{ fontSize: 20, margin: 0, fontWeight: 700, color: 'var(--heading-color)' }}>
-                  {simpleProducts[0].title}
-                </h3>
-              </div>
-            </div>
-
-            {/* 2. Truck Parts (Auto-swiping between Engine Mounting and Daimler Truck) */}
-            <TruckPartsSlider onOpenLightbox={(idx) => setActiveIdx(idx)} />
-
-            {/* 3. Car Parts */}
-            <div
-              className="product-card"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              onClick={() => setActiveIdx(simpleProducts[1].galleryIdx)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="product-image full-view-product-img">
-                <img src={simpleProducts[1].img} alt={simpleProducts[1].title} loading="lazy" />
-                <div className="product-zoom-hint">
-                  <i className="fas fa-search-plus"></i> View Full Photo
-                </div>
-              </div>
-              <div className="product-body" style={{ textAlign: 'center', padding: '20px 16px' }}>
-                <h3 style={{ fontSize: 20, margin: 0, fontWeight: 700, color: 'var(--heading-color)' }}>
-                  {simpleProducts[1].title}
-                </h3>
-              </div>
-            </div>
-
-            {/* 4. Bike Parts */}
-            <div
-              className="product-card"
-              data-aos="fade-up"
-              data-aos-delay="150"
-              onClick={() => setActiveIdx(simpleProducts[2].galleryIdx)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="product-image full-view-product-img">
-                <img src={simpleProducts[2].img} alt={simpleProducts[2].title} loading="lazy" />
-                <div className="product-zoom-hint">
-                  <i className="fas fa-search-plus"></i> View Full Photo
-                </div>
-              </div>
-              <div className="product-body" style={{ textAlign: 'center', padding: '20px 16px' }}>
-                <h3 style={{ fontSize: 20, margin: 0, fontWeight: 700, color: 'var(--heading-color)' }}>
-                  {simpleProducts[2].title}
-                </h3>
-              </div>
-            </div>
-
-            {/* 5. Regular Products Client Buying from Us */}
-            <div
-              className="product-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              onClick={() => setActiveIdx(simpleProducts[3].galleryIdx)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="product-image full-view-product-img">
-                <img src={simpleProducts[3].img} alt={simpleProducts[3].title} loading="lazy" />
-                <div className="product-zoom-hint">
-                  <i className="fas fa-search-plus"></i> View Full Photo
-                </div>
-              </div>
-              <div className="product-body" style={{ textAlign: 'center', padding: '20px 16px' }}>
-                <h3 style={{ fontSize: 20, margin: 0, fontWeight: 700, color: 'var(--heading-color)' }}>
-                  {simpleProducts[3].title}
-                </h3>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

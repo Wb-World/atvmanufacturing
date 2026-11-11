@@ -1,6 +1,3 @@
-import { Link } from 'react-router-dom'
-import PageHero from '../components/PageHero'
-
 const missionPoints = [
   'To manufacture high-precision components that meet and exceed customer expectations.',
   'To maintain world-class quality standards through advanced technology and continuous improvement.',
@@ -8,50 +5,6 @@ const missionPoints = [
   'To build long-term partnerships through reliability, transparency, and timely delivery.',
   'To promote sustainable manufacturing practices while ensuring operational efficiency.',
   'To deliver defect-free products and establish lasting trust with customers across global markets.',
-]
-
-const whyChoose = [
-  { icon: 'fas fa-cut', title: 'Superior Edge Quality' },
-  { icon: 'fas fa-ruler-combined', title: 'Superb Dimensional Control' },
-  { icon: 'fas fa-layer-group', title: 'Enhanced Part Flatness' },
-  { icon: 'fas fa-cogs', title: 'Multiple Features in One Operation' },
-  { icon: 'fas fa-flask', title: 'In-house Material Testing Lab' },
-  { icon: 'fas fa-leaf', title: 'Environmental Sustainability' },
-  { icon: 'fas fa-globe', title: 'Global Export Reach' },
-  { icon: 'fas fa-certificate', title: 'IATF 16949 Certified' },
-]
-
-const infrastructure = [
-  {
-    img: '/images/manufacturing/feintool.jpg',
-    title: 'Fine Blanking Press — Feintool SMG',
-    desc: 'World-class Feintool SMG press delivering high-precision components with smooth, burr-free edges.',
-  },
-  {
-    img: '/images/manufacturing/wasino-press.jpg',
-    title: 'Heavy-Duty WASINO Press',
-    desc: 'Heavy-duty industrial press designed for precision metal forming with consistent, repeatable output.',
-  },
-  {
-    img: '/images/manufacturing/automation-machine.jpg',
-    title: 'Automated Industrial Processing Machine',
-    desc: 'Enclosed automated processing machine with digital controls for consistent, precision-oriented output.',
-  },
-  {
-    img: '/images/manufacturing/robotic-welding.jpg',
-    title: 'Robotic Welding Machine',
-    desc: 'Industrial robotic welding for automated precision welding with uniform quality and high throughput.',
-  },
-  {
-    img: '/images/manufacturing/metallurgical-testing.jpg',
-    title: 'Metallurgical Testing Laboratory',
-    desc: 'Equipped for material characterization, metallographic examination, and quality evaluation.',
-  },
-  {
-    img: '/images/manufacturing/manufacturing-hall.jpg',
-    title: 'Manufacturing Hall',
-    desc: 'State-of-the-art facility housing all presses and auxiliary equipment under one roof.',
-  },
 ]
 
 export default function About() {
@@ -64,16 +17,11 @@ export default function About() {
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center top',
         backgroundColor: '#f5f4f2',
+        minHeight: '100vh',
       }}
     >
-      <PageHero
-        title="About Us"
-        crumbs={[{ label: 'About Us' }]}
-        bgImage="/images/dashboard-aboutus.jpg"
-      />
-
       {/* ── 1. LEADERSHIP SPOTLIGHT AT THE TOP (Exact venuengg.com style) ── */}
-      <section className="leadership-spotlight-section">
+      <section className="leadership-spotlight-section" style={{ paddingTop: '70px', paddingBottom: '50px' }}>
         <div className="container">
           <div className="venu-profile-wrapper" data-aos="fade-up">
             <div className="venu-avatar-wrap">
@@ -93,49 +41,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── 2. COMPANY OVERVIEW (Exact text provided by user) ── */}
-      <section className="section">
-        <div className="container">
-          <div className="about-overview">
-            <div className="about-image-wrap" data-aos="fade-right">
-              <img src="/images/manufacturing/manufacturing-hall.jpg" alt="ATV Precision Manufacturing Facility" loading="lazy" />
-              <div className="about-badge">
-                <strong>15+</strong>
-                <span>Years of Excellence</span>
-              </div>
-            </div>
-            <div className="about-text" data-aos="fade-left">
-              <span className="section-label">About Us</span>
-              <h2 className="section-title">Precision Engineering &amp; <span>Manufacturing Excellence</span></h2>
-              <div className="section-divider"></div>
-              <p style={{ color: 'var(--body-text)', lineHeight: 1.85, marginBottom: 18, fontSize: 15.5 }}>
-                ATV is a precision engineering and manufacturing company based in Chennai, India, specializing in
-                high-quality sheet metal components, precision press parts, CNC machining, fine blanking, laser
-                welding, and customized sub-assemblies. With advanced manufacturing capabilities, in-house tooling,
-                and state-of-the-art quality inspection facilities, we deliver reliable, durable, and
-                precision-engineered solutions to diverse industries.
-              </p>
-              <p style={{ color: 'var(--body-text)', lineHeight: 1.85, marginBottom: 24, fontSize: 15.5 }}>
-                Our integrated manufacturing ecosystem, experienced technical team, and commitment to continuous
-                improvement enable us to meet complex customer requirements while maintaining high standards of
-                quality, performance, and efficiency. We serve industries including <strong>Automotive, E-Mobility,
-                Electrical &amp; Electronics, Aerospace &amp; Defense, and Industrial Hydraulics</strong>.
-              </p>
-              <div className="about-highlights">
-                {whyChoose.slice(0, 6).map((w) => (
-                  <div className="about-highlight" key={w.title}>
-                    <i className={w.icon}></i>
-                    <span>{w.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. VISION & MISSION (Exact text provided by user) ── */}
-      <section className="section-alt">
+      {/* ── 2. VISION & MISSION (Exact text provided by user) ── */}
+      <section className="section-alt" style={{ backgroundColor: 'transparent' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 50 }}>
             <span className="section-label" data-aos="fade-up">Guiding Principles</span>
@@ -175,33 +82,6 @@ export default function About() {
                 <span>“To deliver high-quality, reliable, and innovative manufacturing solutions while ensuring customer satisfaction and continuous improvement.”</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. INFRASTRUCTURE ── */}
-      <section className="section">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <span className="section-label" data-aos="fade-up">World-Class Setup</span>
-            <h2 className="section-title" data-aos="fade-up" data-aos-delay="100">Our <span>Infrastructure</span></h2>
-            <div className="section-divider" style={{ margin: '0 auto 20px' }} data-aos="fade-up" data-aos-delay="150"></div>
-            <p className="section-subtitle" style={{ margin: '0 auto' }} data-aos="fade-up" data-aos-delay="200">
-              Modern manufacturing facility housing world-class presses, robotic welding, and inspection equipment.
-            </p>
-          </div>
-          <div className="infra-grid">
-            {infrastructure.map((inf, i) => (
-              <div className="infra-card" key={inf.title} data-aos="fade-up" data-aos-delay={i * 80}>
-                <div className="infra-img">
-                  <img src={inf.img} alt={inf.title} loading="lazy" />
-                </div>
-                <div className="infra-body">
-                  <h4>{inf.title}</h4>
-                  <p>{inf.desc}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
