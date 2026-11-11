@@ -72,57 +72,23 @@ export default function About() {
         bgImage="/images/dashboard-aboutus.jpg"
       />
 
-      {/* ── 1. LEADERSHIP SPOTLIGHT AT THE TOP (Refer: venuengg.com) ── */}
+      {/* ── 1. LEADERSHIP SPOTLIGHT AT THE TOP (Exact venuengg.com style) ── */}
       <section className="leadership-spotlight-section">
         <div className="container">
-          <div className="leadership-card" data-aos="fade-up">
-            <div className="leadership-photo-wrap">
-              <div className="leadership-portrait-frame">
-                <img
-                  src="/images/manager-portrait.jpg"
-                  alt="K. Raghavendran B.E. - Managing Director"
-                  className="leadership-photo"
-                />
-              </div>
+          <div className="venu-profile-wrapper" data-aos="fade-up">
+            <div className="venu-avatar-wrap">
+              <img
+                src="/images/r1.png"
+                alt="K. Raghavendran - Founder & Managing Director"
+                className="venu-avatar-img"
+              />
             </div>
-            <div className="leadership-info">
-              <div className="leadership-badge">
-                <span className="badge-pill">FOUNDER &amp; MANAGING DIRECTOR</span>
-              </div>
-              <h2 className="leadership-name">K. RAGHAVENDRAN <span>B.E.</span></h2>
-              <div className="leadership-title">
-                <i className="fas fa-briefcase"></i> Managing Director, ATV Precision Components Pvt. Ltd.
-              </div>
-              <div className="leadership-divider"></div>
-              <p className="leadership-quote">
-                “A visionary leader advocating strong ethical business practices and an uncompromising quality
-                culture that drives the entire organisation to scale new heights year over year. At ATV, our passion
-                for precision and technological innovation powers our customer partnerships worldwide.”
-              </p>
-              <div className="leadership-meta">
-                <div className="meta-item">
-                  <i className="fas fa-award"></i>
-                  <div>
-                    <strong>15+ Years</strong>
-                    <span>Engineering Leadership</span>
-                  </div>
-                </div>
-                <div className="meta-item">
-                  <i className="fas fa-shield-alt"></i>
-                  <div>
-                    <strong>Zero-Defect</strong>
-                    <span>World-Class Quality</span>
-                  </div>
-                </div>
-                <div className="meta-item">
-                  <i className="fas fa-globe-asia"></i>
-                  <div>
-                    <strong>Global Reach</strong>
-                    <span>OEM Export Trust</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h2 className="venu-profile-name">K Raghavendran</h2>
+            <p className="venu-profile-role">Founder &amp; Managing Director — ATV Precision Components</p>
+            <p className="venu-profile-bio">
+              He is a visionary, advocating strong ethical business practices and an uncompromising quality
+              culture that drives the entire organisation to scale new highs YOY.
+            </p>
           </div>
         </div>
       </section>

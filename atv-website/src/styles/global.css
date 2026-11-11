@@ -3200,7 +3200,7 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   2. LEADERSHIP SPOTLIGHT (venuengg.com rich executive style)
+   2. LEADERSHIP SPOTLIGHT (Exact venuengg.com style)
    ============================================ */
 /* About page background texture wrapper */
 .about-page-wrapper {
@@ -3219,179 +3219,66 @@ ul { list-style: none; }
 }
 
 .leadership-spotlight-section {
-  padding: 50px 0 25px;
+  padding: 60px 0 40px;
 }
-.leadership-card {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  background: linear-gradient(135deg, #1b090f 0%, #29121a 45%, #241624 100%);
-  border-radius: 26px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.leadership-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #ea9129 0%, #e06e38 30%, #d45945 60%, #ce4358 100%);
-}
-.leadership-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
-}
-.leadership-photo-wrap {
-  position: relative;
-  background: radial-gradient(circle at 40% 40%, #46141e 0%, #200a10 70%, #15060a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 36px 30px;
-  overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
-}
-.leadership-portrait-frame {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 280px;
-  height: 320px;
-  background: #ffffff;
-  padding: 10px;
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.leadership-portrait-frame img.leadership-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  filter: grayscale(100%) contrast(1.08) brightness(1.02);
-  display: block;
-}
-.leadership-info {
-  padding: 44px 44px;
+.venu-profile-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  color: #fff;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
-.leadership-badge,
-.director-badge {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 16px;
-  width: fit-content;
-}
-.badge-pill {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(229, 70, 70, 0.12);
-  color: #fca5a5;
-  border: 1px solid rgba(248, 113, 113, 0.25);
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-}
-.leadership-name,
-.director-name {
-  font-family: var(--font-heading);
-  font-size: 34px;
-  font-weight: 900;
-  color: #ffffff;
-  margin: 0 0 10px;
-  letter-spacing: 0.5px;
-  line-height: 1.15;
-}
-.leadership-name span {
-  color: #ea7a72;
-  font-size: 22px;
-  font-weight: 600;
-  margin-left: 6px;
-}
-.leadership-title,
-.director-title {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #e2e8f0;
+.venu-avatar-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  background: #ffffff;
+  padding: 4px;
+  border: 4px solid #ffffff;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.venu-avatar-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+.venu-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.venu-profile-name {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: #2b3445;
+  margin: 0 0 10px;
+  letter-spacing: 0.3px;
+}
+.venu-profile-role {
+  font-size: 15.5px;
+  color: #555e6c;
+  font-weight: 400;
+  margin: 0 0 18px;
   letter-spacing: 0.2px;
 }
-.leadership-title i {
-  color: #ea580c;
+.venu-profile-bio {
   font-size: 15px;
-}
-.leadership-divider {
-  width: 52px;
-  height: 3px;
-  background: #ea580c;
-  border-radius: 2px;
-  margin-bottom: 22px;
-}
-.leadership-quote,
-.director-bio {
-  font-size: 15px;
-  line-height: 1.75;
-  color: #f1f5f9;
-  font-style: italic;
+  line-height: 1.85;
+  color: #4b5563;
   font-weight: 400;
-  margin: 0 0 28px;
-  position: relative;
-  padding-left: 18px;
-  border-left: 2px solid #be185d;
-}
-.leadership-meta,
-.leadership-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.meta-item,
-.highlight-pill {
-  background: #242430;
-  border: 1px solid #282a39;
-  padding: 14px 14px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.25s ease;
-}
-.meta-item:hover,
-.highlight-pill:hover {
-  background: #2d2d3d;
-  border-color: rgba(248, 113, 113, 0.4);
-}
-.meta-item i,
-.highlight-pill i {
-  font-size: 19px;
-  color: #ef4444;
-  flex-shrink: 0;
-}
-.meta-item strong {
-  display: block;
-  font-size: 13.5px;
-  color: #ffffff;
-  font-weight: 800;
-  line-height: 1.25;
-}
-.meta-item span {
-  display: block;
-  font-size: 11px;
-  color: #94a3b8;
-  margin-top: 2px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 /* Tagline boxes in Vision & Mission */
@@ -3408,29 +3295,12 @@ ul { list-style: none; }
 }
 
 @media (max-width: 960px) {
-  .leadership-card {
-    grid-template-columns: 1fr;
+  .venu-avatar-wrap {
+    width: 190px;
+    height: 190px;
   }
-  .leadership-photo-wrap {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 30px 20px;
-  }
-  .leadership-portrait-frame {
-    max-width: 260px;
-    height: 290px;
-  }
-  .leadership-info {
-    padding: 36px 28px;
-  }
-  .leadership-name,
-  .director-name {
-    font-size: 26px;
-  }
-  .leadership-meta,
-  .leadership-highlights {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .venu-profile-name {
+    font-size: 25px;
   }
 }
 
@@ -5108,12 +4978,10 @@ ul { list-style: none; }
   .about-image-wrap img { width: 100%; height: 340px; object-fit: cover; }
 
   /* Leadership */
-  .leadership-card { grid-template-columns: 1fr; }
-  .leadership-photo-wrap { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 28px 20px; }
-  .leadership-portrait-frame { max-width: 250px; height: 280px; }
-  .leadership-info { padding: 28px 24px; }
-  .leadership-name, .director-name { font-size: 24px; }
-  .leadership-meta, .leadership-highlights { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .venu-avatar-wrap { width: 180px; height: 180px; }
+  .venu-profile-name { font-size: 24px; }
+  .venu-profile-role { font-size: 14px; }
+  .venu-profile-bio { font-size: 14px; }
 
   /* Sections */
   .sustainability { grid-template-columns: 1fr; gap: 32px; }
@@ -5258,14 +5126,10 @@ ul { list-style: none; }
   .about-highlights { grid-template-columns: 1fr 1fr; gap: 10px; }
 
   /* Leadership */
-  .leadership-card { grid-template-columns: 1fr; border-radius: 18px; }
-  .leadership-photo-wrap { padding: 22px 16px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .leadership-portrait-frame { max-width: 230px; height: 260px; }
-  .leadership-info { padding: 22px 18px; }
-  .leadership-name, .director-name { font-size: 22px; }
-  .leadership-meta, .leadership-highlights { grid-template-columns: 1fr; gap: 8px; }
-  .meta-item { padding: 10px 12px; }
-  .leadership-quote, .director-bio { font-size: 13.5px; padding-left: 12px; }
+  .venu-avatar-wrap { width: 160px; height: 160px; }
+  .venu-profile-name { font-size: 22px; }
+  .venu-profile-role { font-size: 13.5px; }
+  .venu-profile-bio { font-size: 13.5px; }
 
   /* Vision & Mission */
   .vm-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -5404,11 +5268,10 @@ ul { list-style: none; }
   .cta-banner p { font-size: 12.5px; }
 
   /* Leadership */
-  .leadership-photo, .director-photo { height: 200px; }
-  .leadership-name, .director-name { font-size: 19px; }
-  .meta-item { padding: 8px; }
-  .meta-item strong { font-size: 11.5px; }
-  .meta-item span { font-size: 9.5px; }
+  .venu-avatar-wrap { width: 140px; height: 140px; }
+  .venu-profile-name { font-size: 20px; }
+  .venu-profile-role { font-size: 13px; }
+  .venu-profile-bio { font-size: 13px; }
 
   /* Mat stats */
   .mat-stats { grid-template-columns: 1fr 1fr; }
