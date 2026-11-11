@@ -59,9 +59,11 @@ export default function About() {
     <div
       className="about-page-wrapper"
       style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), url("/images/background-aboutus.jpg")`,
+        backgroundImage: 'url("/images/background-aboutus.jpg")',
         backgroundRepeat: 'repeat',
         backgroundAttachment: 'fixed',
+        backgroundPosition: 'center top',
+        backgroundColor: '#f5f4f2',
       }}
     >
       <PageHero
@@ -75,12 +77,13 @@ export default function About() {
         <div className="container">
           <div className="leadership-card" data-aos="fade-up">
             <div className="leadership-photo-wrap">
-              <div className="leadership-photo-backdrop-glow"></div>
-              <img
-                src="/images/manager.jpeg"
-                alt="K. Raghavendran B.E. - Managing Director"
-                className="leadership-photo"
-              />
+              <div className="leadership-portrait-frame">
+                <img
+                  src="/images/manager-portrait.jpg"
+                  alt="K. Raghavendran B.E. - Managing Director"
+                  className="leadership-photo"
+                />
+              </div>
             </div>
             <div className="leadership-info">
               <div className="leadership-badge">

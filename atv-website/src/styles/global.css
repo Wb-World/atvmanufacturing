@@ -3223,11 +3223,10 @@ ul { list-style: none; }
 }
 .leadership-card {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  background: linear-gradient(135deg, #0b0f19 0%, #161b2b 45%, #2a0c12 100%);
-  border: 1px solid rgba(229, 57, 53, 0.35);
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 30px rgba(229, 57, 53, 0.12);
+  grid-template-columns: 360px 1fr;
+  background: linear-gradient(135deg, #1b090f 0%, #29121a 45%, #241624 100%);
+  border-radius: 26px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3239,61 +3238,45 @@ ul { list-style: none; }
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #E53935 0%, #FFA000 50%, #E53935 100%);
+  background: linear-gradient(90deg, #ea9129 0%, #e06e38 30%, #d45945 60%, #ce4358 100%);
 }
 .leadership-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), 0 0 40px rgba(229, 57, 53, 0.22);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
 }
 .leadership-photo-wrap {
   position: relative;
-  background: radial-gradient(circle at 50% 35%, #3d1016 0%, #130a0e 70%, #07090e 100%);
+  background: radial-gradient(circle at 40% 40%, #46141e 0%, #200a10 70%, #15060a 100%);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding: 40px 24px 0;
+  padding: 36px 30px;
   overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
-.leadership-photo-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 18px 18px;
-  opacity: 0.6;
-  pointer-events: none;
-}
-.leadership-photo-backdrop-glow {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(229, 57, 53, 0.35) 0%, transparent 70%);
-  filter: blur(25px);
-  pointer-events: none;
-}
-.leadership-photo,
-.director-photo {
+.leadership-portrait-frame {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 320px;
-  height: 400px;
-  object-fit: contain;
-  object-position: bottom center;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.75));
-  transition: transform 0.4s ease;
+  max-width: 280px;
+  height: 320px;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.leadership-card:hover .leadership-photo,
-.leadership-card:hover .director-photo {
-  transform: scale(1.03);
+.leadership-portrait-frame img.leadership-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%) contrast(1.08) brightness(1.02);
+  display: block;
 }
 .leadership-info {
-  padding: 48px 48px;
+  padding: 44px 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3309,104 +3292,106 @@ ul { list-style: none; }
 .badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(229, 57, 53, 0.25), rgba(229, 57, 53, 0.08));
-  color: #ff8a80;
-  border: 1px solid rgba(229, 57, 53, 0.4);
-  padding: 6px 14px;
+  background: rgba(229, 70, 70, 0.12);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  padding: 6px 16px;
   border-radius: 50px;
   font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
 }
 .leadership-name,
 .director-name {
   font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 900;
   color: #ffffff;
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   letter-spacing: 0.5px;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 .leadership-name span {
-  color: #ff8a80;
+  color: #ea7a72;
   font-size: 22px;
   font-weight: 600;
-  margin-left: 4px;
+  margin-left: 6px;
 }
 .leadership-title,
 .director-title {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #e2e8f0;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  letter-spacing: 0.3px;
+  gap: 10px;
+  margin-bottom: 14px;
+  letter-spacing: 0.2px;
 }
 .leadership-title i {
-  color: var(--primary-red);
+  color: #ea580c;
+  font-size: 15px;
 }
 .leadership-divider {
-  width: 60px;
+  width: 52px;
   height: 3px;
-  background: linear-gradient(90deg, #E53935, #FFA000);
+  background: #ea580c;
   border-radius: 2px;
   margin-bottom: 22px;
 }
 .leadership-quote,
 .director-bio {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #f1f5f9;
   font-style: italic;
+  font-weight: 400;
   margin: 0 0 28px;
   position: relative;
-  padding-left: 20px;
-  border-left: 3px solid rgba(229, 57, 53, 0.6);
+  padding-left: 18px;
+  border-left: 2px solid #be185d;
 }
 .leadership-meta,
 .leadership-highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
 .meta-item,
 .highlight-pill {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 16px;
+  background: #242430;
+  border: 1px solid #282a39;
+  padding: 14px 14px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 .meta-item:hover,
 .highlight-pill:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(229, 57, 53, 0.5);
-  transform: translateY(-2px);
+  background: #2d2d3d;
+  border-color: rgba(248, 113, 113, 0.4);
 }
 .meta-item i,
 .highlight-pill i {
-  font-size: 20px;
-  color: #ff5252;
+  font-size: 19px;
+  color: #ef4444;
   flex-shrink: 0;
 }
 .meta-item strong {
   display: block;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 700;
+  font-size: 13.5px;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.25;
 }
 .meta-item span {
   display: block;
   font-size: 11px;
   color: #94a3b8;
+  margin-top: 2px;
 }
 
 /* Tagline boxes in Vision & Mission */
@@ -3429,11 +3414,11 @@ ul { list-style: none; }
   .leadership-photo-wrap {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 35px;
+    padding: 30px 20px;
   }
-  .leadership-photo,
-  .director-photo {
-    height: 320px;
+  .leadership-portrait-frame {
+    max-width: 260px;
+    height: 290px;
   }
   .leadership-info {
     padding: 36px 28px;
@@ -5124,8 +5109,8 @@ ul { list-style: none; }
 
   /* Leadership */
   .leadership-card { grid-template-columns: 1fr; }
-  .leadership-photo-wrap { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 30px 24px 0; }
-  .leadership-photo, .director-photo { height: 280px; }
+  .leadership-photo-wrap { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 28px 20px; }
+  .leadership-portrait-frame { max-width: 250px; height: 280px; }
   .leadership-info { padding: 28px 24px; }
   .leadership-name, .director-name { font-size: 24px; }
   .leadership-meta, .leadership-highlights { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -5273,11 +5258,11 @@ ul { list-style: none; }
   .about-highlights { grid-template-columns: 1fr 1fr; gap: 10px; }
 
   /* Leadership */
-  .leadership-card { grid-template-columns: 1fr; border-radius: 16px; }
-  .leadership-photo-wrap { padding: 20px 16px 0; }
-  .leadership-photo, .director-photo { height: 240px; }
-  .leadership-info { padding: 20px 16px; }
-  .leadership-name, .director-name { font-size: 20px; }
+  .leadership-card { grid-template-columns: 1fr; border-radius: 18px; }
+  .leadership-photo-wrap { padding: 22px 16px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .leadership-portrait-frame { max-width: 230px; height: 260px; }
+  .leadership-info { padding: 22px 18px; }
+  .leadership-name, .director-name { font-size: 22px; }
   .leadership-meta, .leadership-highlights { grid-template-columns: 1fr; gap: 8px; }
   .meta-item { padding: 10px 12px; }
   .leadership-quote, .director-bio { font-size: 13.5px; padding-left: 12px; }
