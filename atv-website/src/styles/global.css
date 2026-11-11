@@ -3202,6 +3202,22 @@ ul { list-style: none; }
 /* ============================================
    2. LEADERSHIP SPOTLIGHT (venuengg.com rich executive style)
    ============================================ */
+/* About page background texture wrapper */
+.about-page-wrapper {
+  position: relative;
+  width: 100%;
+}
+.about-page-wrapper .section,
+.about-page-wrapper .section-alt,
+.about-page-wrapper .leadership-spotlight-section {
+  background: transparent !important;
+}
+.about-page-wrapper .about-overview,
+.about-page-wrapper .infra-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+}
+
 .leadership-spotlight-section {
   padding: 50px 0 25px;
 }

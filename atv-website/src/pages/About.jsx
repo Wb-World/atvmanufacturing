@@ -56,11 +56,18 @@ const infrastructure = [
 
 export default function About() {
   return (
-    <>
+    <div
+      className="about-page-wrapper"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), url("/images/background-aboutus.jpg")`,
+        backgroundRepeat: 'repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <PageHero
         title="About Us"
         crumbs={[{ label: 'About Us' }]}
-        bgImage="/images/manufacturinghall.jpg"
+        bgImage="/images/dashboard-aboutus.jpg"
       />
 
       {/* ── 1. LEADERSHIP SPOTLIGHT AT THE TOP (Refer: venuengg.com) ── */}
@@ -229,6 +236,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

@@ -59,7 +59,6 @@ const clients = [
   { name: 'TEL Turbo Energy', img: '/images/clients/Tel-turbo-energy-client.jpg' },
   { name: 'Inzi Controls', img: '/images/clients/inzi-controls-client.jpg' },
   { name: 'ABI Showatech', img: '/images/clients/ABI-showatech.jpg' },
-  { name: 'IR Client', img: '/images/clients/IR-client.jpg' },
 ]
 
 const sustainPoints = [
@@ -106,7 +105,7 @@ export default function Home() {
       <section className="hero hero-centered" id="home-hero" ref={heroRef}>
         <div className="hero-bg">
           <img
-            src="/images/manufacturinghall.jpg"
+            src="/images/home-dashboard.jpg"
             alt="ATV Precision Manufacturing Facility"
             loading="eager"
           />
