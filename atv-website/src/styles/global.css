@@ -3294,6 +3294,116 @@ ul { list-style: none; }
   align-items: center;
 }
 
+/* About Page - Company Profile Card */
+.about-company-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--radius-lg);
+  padding: 44px 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+.about-lead-text {
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: #1e293b;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.about-sub-text {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: #475569;
+  margin: 0;
+}
+
+/* Core Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.capability-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.capability-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(192, 27, 27, 0.12);
+  border-color: rgba(229, 57, 53, 0.4);
+}
+.capability-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  background: rgba(229, 57, 53, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.capability-card:hover .capability-icon {
+  background: var(--primary-red);
+  transform: scale(1.08);
+}
+.capability-icon i {
+  font-size: 24px;
+  color: var(--primary-red);
+  transition: color 0.3s ease;
+}
+.capability-card:hover .capability-icon i {
+  color: #ffffff;
+}
+.capability-card h4 {
+  font-family: var(--font-heading);
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .about-company-card {
+    padding: 32px 24px;
+  }
+}
+@media (max-width: 600px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .about-company-card {
+    padding: 24px 18px;
+  }
+  .about-lead-text {
+    font-size: 15px;
+  }
+  .about-sub-text {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 960px) {
   .venu-avatar-wrap {
     width: 190px;

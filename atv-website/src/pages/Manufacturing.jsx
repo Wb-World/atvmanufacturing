@@ -4,34 +4,35 @@ import PageHero from '../components/PageHero'
 const machines = [
   {
     img: '/images/manufacturing/feintool.jpg',
-    title: 'Fine Blanking Press Machine — Feintool SMG',
+    title: 'Feintool SMG — Fineblanking Press',
     brand: 'Feintool SMG',
-    desc: 'Precision manufacturing machine used for producing high-quality metal components with accurate dimensions and smooth, burr-free edges. The machine performs a controlled blanking process to achieve excellent surface finish and dimensional accuracy.',
+    desc: 'The Feintool SMG Fineblanking Press is used for precision metal component manufacturing. It helps produce high-quality metal parts with accurate dimensions, smooth edges and consistent results. This technology supports efficient manufacturing for automotive and industrial applications.',
     features: [
-      'High-precision metal component manufacturing',
-      'Smooth and clean cutting edges — 100% tear-free',
-      'Excellent dimensional accuracy and repeatability',
-      'Suitable for complex and intricate components',
-      'Consistent production quality across all runs',
-      'Ideal for automotive and industrial applications',
+      { title: 'Precision Manufacturing', desc: 'Produces accurate and high-quality metal components.' },
+      { title: 'Production Efficiency', desc: 'Supports consistent and reliable manufacturing operations.' },
+      { title: 'Material Utilization', desc: 'Optimized production processes help reduce unnecessary material wastage.' },
+      { title: 'Environmental Responsibility', desc: 'Proper energy management, hydraulic oil monitoring and waste management support environmentally responsible manufacturing.' },
+      { title: 'Quality Assurance', desc: 'Supports process monitoring for consistent, high-precision component quality.' },
     ],
     applications: 'Automotive parts, gears, brackets, plates, and other high-accuracy sheet-metal components.',
     reverse: false,
   },
   {
     img: '/images/manufacturing/automation-machine.jpg',
-    title: 'Automated Industrial Processing Machine',
-    brand: 'Automated System',
-    desc: 'Designed for controlled and consistent manufacturing operations. Its enclosed working area and integrated control panel enable operators to monitor and manage key machine parameters during production.',
-    features: [
-      'Automated production operation',
-      'Digital control panel for process monitoring',
-      'Enclosed working chamber for safer operation',
-      'Consistent and repeatable output',
-      'Suitable for continuous industrial production',
-      'Designed for precision-oriented manufacturing',
+    title: 'Induction Hardening Machine',
+    brand: 'Advanced Thermal Processing',
+    desc: [
+      'The Induction Hardening Machine uses advanced electromagnetic heating technology to improve the surface hardness, strength and wear resistance of metal components. The process involves rapidly heating specific areas of the component followed by controlled quenching to achieve the required hardness and durability.',
+      'Our induction hardening process supports consistent quality, improved component performance and reliable manufacturing for automotive and industrial applications.',
     ],
-    applications: 'Industrial component processing, precision manufacturing, and high-volume production operations.',
+    features: [
+      { title: 'Surface Hardness', desc: 'Improves the surface hardness of metal components for better performance.' },
+      { title: 'Wear Resistance', desc: 'Enhances resistance to friction and surface wear.' },
+      { title: 'Controlled Heating', desc: 'Provides precise and localized heating for specific component areas.' },
+      { title: 'Production Efficiency', desc: 'Supports fast processing and consistent manufacturing results.' },
+      { title: 'Quality Assurance', desc: 'Helps achieve the required hardness and durability through process monitoring.' },
+    ],
+    applications: 'Automotive drive and transmission components, shafts, gears, pins, and high-wear precision industrial parts.',
     reverse: true,
   },
   {
@@ -40,12 +41,12 @@ const machines = [
     brand: 'Industrial Robot',
     desc: 'Industrial robotic welding system used for automated and precise welding of metal components. The robotic arm performs welding operations with consistent movement and controlled welding parameters, helping achieve uniform weld quality and improved production efficiency.',
     features: [
-      'Automated robotic welding with high precision',
-      'Uniform weld quality across all components',
-      'Reduced manual intervention and human error',
-      'Suitable for repetitive high-volume production',
-      'Improved productivity and process efficiency',
-      'Real-time process monitoring and control',
+      { title: 'Automated Precision', desc: 'High-precision automated robotic welding with uniform quality.' },
+      { title: 'Consistent Quality', desc: 'Uniform weld quality across all manufactured components.' },
+      { title: 'Error Reduction', desc: 'Reduced manual intervention and minimal human error.' },
+      { title: 'High-Volume Production', desc: 'Suitable for repetitive, high-speed manufacturing runs.' },
+      { title: 'Enhanced Productivity', desc: 'Improved production throughput and overall process efficiency.' },
+      { title: 'Process Monitoring', desc: 'Real-time parameter control and continuous monitoring.' },
     ],
     applications: 'Automotive components, fabricated metal parts, brackets, frames, and other industrial components.',
     reverse: false,
@@ -56,12 +57,11 @@ const machines = [
     brand: 'WASINO',
     desc: 'Heavy-duty industrial press designed for precision metal forming and component manufacturing. The machine applies controlled pressing force to shape and form metal materials, enabling consistent dimensions, repeatable production, and reliable component quality.',
     features: [
-      'Heavy-duty pressing force for thick materials',
-      'Precision metal forming capability',
-      'Consistent dimensions across production runs',
-      'Repeatable and reliable component quality',
-      'Robust construction for long-term reliability',
-      'Advanced control systems for process management',
+      { title: 'Heavy-Duty Force', desc: 'Heavy-duty pressing force for thick, high-strength materials.' },
+      { title: 'Precision Forming', desc: 'Advanced metal forming capability with high dimensional accuracy.' },
+      { title: 'Consistent Output', desc: 'Repeatable dimensions and reliable component quality across production runs.' },
+      { title: 'Robust Construction', desc: 'Industrial durability engineered for long-term continuous reliability.' },
+      { title: 'Process Control', desc: 'Advanced digital control systems for pressing parameter management.' },
     ],
     applications: 'Precision metal forming, component shaping, and high-force industrial pressing operations.',
     reverse: true,
@@ -72,12 +72,11 @@ const machines = [
     brand: 'In-House Lab',
     desc: 'Equipped for material characterization, metallographic examination, and quality evaluation of manufactured components. Advanced microscopy and testing facilities help assess material microstructure, surface characteristics, and mechanical properties for consistent product quality.',
     features: [
-      'Material characterization and testing',
-      'Metallographic examination of components',
-      'Advanced microscopy capabilities',
-      'Surface characteristics assessment',
-      'Mechanical property evaluation',
-      'Quality control for every production batch',
+      { title: 'Material Characterization', desc: 'Rigorous chemical and physical testing of incoming materials.' },
+      { title: 'Metallographic Examination', desc: 'Microstructure assessment using advanced microscopy facilities.' },
+      { title: 'Surface Assessment', desc: 'Detailed surface roughness, profile, and flatness measurement.' },
+      { title: 'Mechanical Testing', desc: 'Tensile, hardness, and mechanical property evaluation.' },
+      { title: 'Batch Traceability', desc: '100% material traceability and verification for every production batch.' },
     ],
     applications: 'Quality assurance, incoming material inspection, in-process testing, and final product verification.',
     reverse: false,
@@ -136,12 +135,33 @@ export default function Manufacturing() {
                   <i className="fas fa-industry"></i> {m.brand}
                 </span>
                 <h2>{m.title}</h2>
-                <p className="machine-desc">{m.desc}</p>
+                {Array.isArray(m.desc) ? (
+                  m.desc.map((paragraph, pIdx) => (
+                    <p
+                      className="machine-desc"
+                      key={pIdx}
+                      style={{ marginBottom: pIdx < m.desc.length - 1 ? 12 : 20 }}
+                    >
+                      {paragraph}
+                    </p>
+                  ))
+                ) : (
+                  <p className="machine-desc">{m.desc}</p>
+                )}
                 <div className="machine-features">
-                  {m.features.map((f) => (
-                    <div className="mfeature" key={f}>
+                  {m.features.map((f, fIdx) => (
+                    <div className="mfeature" key={typeof f === 'string' ? f : f.title || fIdx}>
                       <i className="fas fa-check-circle"></i>
-                      <span>{f}</span>
+                      <span>
+                        {typeof f === 'string' ? (
+                          f
+                        ) : (
+                          <>
+                            <strong>{f.title}: </strong>
+                            {f.desc}
+                          </>
+                        )}
+                      </span>
                     </div>
                   ))}
                 </div>
