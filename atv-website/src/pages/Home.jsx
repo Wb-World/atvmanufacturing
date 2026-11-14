@@ -61,11 +61,20 @@ const clients = [
   { name: 'ABI Showatech', img: '/images/clients/ABI-showatech.jpg' },
 ]
 
-const sustainPoints = [
-  { icon: 'fas fa-leaf', title: 'Cleaner Production', desc: 'Adopting eco-friendly manufacturing methods to reduce our environmental footprint.' },
-  { icon: 'fas fa-bolt', title: 'Energy Efficiency', desc: 'Promoting energy-efficient technologies throughout our manufacturing processes.' },
-  { icon: 'fas fa-recycle', title: 'Contingency Planning', desc: 'Robust systems to prevent, mitigate and control environmental damage.' },
-  { icon: 'fas fa-shield-alt', title: 'ISO 14001 Certified', desc: 'Our Environmental Management System is internationally certified and audited.' },
+const feintoolFeatures = [
+  { icon: 'fas fa-bullseye', title: 'Precision Manufacturing', desc: 'Produces accurate and high-quality metal components.' },
+  { icon: 'fas fa-cogs', title: 'Production Efficiency', desc: 'Supports consistent and reliable manufacturing operations.' },
+  { icon: 'fas fa-recycle', title: 'Material Utilization', desc: 'Optimized production processes help reduce unnecessary material wastage.' },
+  { icon: 'fas fa-leaf', title: 'Environmental Responsibility', desc: 'Proper energy management, hydraulic oil monitoring and waste management support environmentally responsible manufacturing.' },
+  { icon: 'fas fa-shield-alt', title: 'Quality Assurance', desc: 'Helps achieve the required high precision and consistent quality.' },
+]
+
+const inductionFeatures = [
+  { icon: 'fas fa-shield-alt', title: 'Surface Hardness', desc: 'Improves the surface hardness of metal components for better performance.' },
+  { icon: 'fas fa-layer-group', title: 'Wear Resistance', desc: 'Enhances resistance to friction and surface wear.' },
+  { icon: 'fas fa-fire', title: 'Controlled Heating', desc: 'Provides precise and localized heating for specific component areas.' },
+  { icon: 'fas fa-tachometer-alt', title: 'Production Efficiency', desc: 'Supports fast processing and consistent manufacturing results.' },
+  { icon: 'fas fa-check-double', title: 'Quality Assurance', desc: 'Helps achieve the required hardness and durability through process monitoring.' },
 ]
 
 const stats = [
@@ -243,22 +252,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SUSTAINABILITY ── */}
+      {/* ── FEINTOOL SMG FINEBLANKING PRESS ── */}
       <section className="section">
         <div className="container">
           <div className="sustainability">
             <div className="sustain-text" data-aos="fade-right">
-              <span className="section-label">Our Commitment</span>
-              <h2 className="section-title">Focus on Environmental <span>Sustainability</span></h2>
+              <span className="section-label">Fineblanking Technology</span>
+              <h2 className="section-title">Feintool SMG — <span>Fineblanking Press</span></h2>
               <div className="section-divider"></div>
               <p className="section-subtitle">
-                The Company seeks to improve its environmental performance by adopting cleaner production
-                methods and promoting energy-efficient and environmentally friendly technologies. Suitable
-                processes and systems are developed with contingency plans to help prevent, mitigate, and
-                control environmental damage caused by the Company's operations.
+                The Feintool SMG Fineblanking Press is used for precision metal component manufacturing. It helps produce high-quality metal parts with accurate dimensions, smooth edges and consistent results. This technology supports efficient manufacturing for automotive and industrial applications.
               </p>
               <div className="sustain-points">
-                {sustainPoints.map((p) => (
+                {feintoolFeatures.map((p) => (
                   <div className="sustain-point" key={p.title}>
                     <i className={p.icon}></i>
                     <div>
@@ -270,55 +276,47 @@ export default function Home() {
               </div>
             </div>
             <div className="sustain-image" data-aos="fade-left">
-              <img src="/images/manufacturing/feintool.jpg" alt="ATV Environmental Sustainability" loading="lazy" />
+              <img src="/images/manufacturing/feintool.jpg" alt="Feintool SMG Fineblanking Press" loading="lazy" />
               <div className="sustain-badge">
-                <strong>ISO 14001</strong>
-                <span>Environmental Certified</span>
+                <strong>Feintool SMG</strong>
+                <span>Fineblanking Press</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── MATERIAL EDGE ── */}
+      {/* ── INDUCTION HARDENING MACHINE ── */}
       <section className="section-alt">
         <div className="container">
           <div className="material-edge">
             <div className="material-image" data-aos="fade-right">
-              <img src="/images/manufacturing/automation-machine.jpg" alt="Fine Blanking Material Edge" loading="lazy" />
-              <div className="material-image-overlay"></div>
+              <img src="/images/manufacturing/automation-machine.jpg" alt="Induction Hardening Machine" loading="lazy" />
+              <div className="sustain-badge">
+                <strong>Induction Hardening</strong>
+                <span>Thermal Processing</span>
+              </div>
             </div>
             <div data-aos="fade-left">
-              <span className="section-label">Material Capability</span>
-              <h2 className="section-title">Fine Blanking — <span>The Material Edge</span></h2>
+              <span className="section-label">Thermal Processing</span>
+              <h2 className="section-title">Induction Hardening <span>Machine</span></h2>
               <div className="section-divider"></div>
+              <p style={{ color: 'var(--muted-text)', lineHeight: 1.8, marginBottom: 16, fontSize: 15 }}>
+                The Induction Hardening Machine uses advanced electromagnetic heating technology to improve the surface hardness, strength and wear resistance of metal components. The process involves rapidly heating specific areas of the component followed by controlled quenching to achieve the required hardness and durability.
+              </p>
               <p style={{ color: 'var(--muted-text)', lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
-                Ability to source steel from within TI and our association with renowned fine blanking
-                steel mills and suppliers from overseas. Special spheroidization annealing process of
-                raw material enables the manufacturing of a perfect fine blanking part.
+                Our induction hardening process supports consistent quality, improved component performance and reliable manufacturing for automotive and industrial applications.
               </p>
-              <p style={{ color: 'var(--muted-text)', lineHeight: 1.8, marginBottom: 32, fontSize: 15 }}>
-                Our in-house metallurgical laboratory ensures every batch of material meets the exacting
-                standards required for precision fine blanking, guaranteeing consistent results across
-                every production run.
-              </p>
-              <div className="material-stats">
-                <div className="mstat">
-                  <strong>1.6mm</strong>
-                  <span>Min Thickness</span>
-                </div>
-                <div className="mstat">
-                  <strong>16mm</strong>
-                  <span>Max Thickness</span>
-                </div>
-                <div className="mstat">
-                  <strong>±0.01mm</strong>
-                  <span>Tolerance</span>
-                </div>
-                <div className="mstat">
-                  <strong>100%</strong>
-                  <span>Quality Tested</span>
-                </div>
+              <div className="sustain-points">
+                {inductionFeatures.map((p) => (
+                  <div className="sustain-point" key={p.title}>
+                    <i className={p.icon}></i>
+                    <div>
+                      <strong>{p.title}</strong>
+                      <p>{p.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
