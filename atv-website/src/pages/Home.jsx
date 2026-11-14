@@ -277,10 +277,6 @@ export default function Home() {
             </div>
             <div className="sustain-image" data-aos="fade-left">
               <img src="/images/manufacturing/feintool.jpg" alt="Feintool SMG Fineblanking Press" loading="lazy" />
-              <div className="sustain-badge">
-                <strong>Feintool SMG</strong>
-                <span>Fineblanking Press</span>
-              </div>
             </div>
           </div>
         </div>
@@ -292,10 +288,6 @@ export default function Home() {
           <div className="material-edge">
             <div className="material-image" data-aos="fade-right">
               <img src="/images/manufacturing/automation-machine.jpg" alt="Induction Hardening Machine" loading="lazy" />
-              <div className="sustain-badge">
-                <strong>Induction Hardening</strong>
-                <span>Thermal Processing</span>
-              </div>
             </div>
             <div data-aos="fade-left">
               <span className="section-label">Thermal Processing</span>
