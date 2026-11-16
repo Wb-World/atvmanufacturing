@@ -321,7 +321,7 @@ export default function Home() {
           <div style={{ textAlign: 'center', marginBottom: 44 }}>
             <span className="section-label" data-aos="fade-up">Trusted By</span>
             <h2 className="section-title" data-aos="fade-up" data-aos-delay="100">
-              Our <span>Clients</span>
+              Our <span>Customers</span>
             </h2>
             <div className="section-divider" style={{ margin: '0 auto' }} data-aos="fade-up" data-aos-delay="150"></div>
           </div>
