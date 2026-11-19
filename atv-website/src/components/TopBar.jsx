@@ -10,7 +10,7 @@ export default function TopBar() {
             </span>
             <span className="top-bar-item">
               <i className="fas fa-mobile-alt"></i>
-              <a href="tel:+919841028167">+91-98410-28167</a>
+              <a href="tel:+919094790917">+91 90947 90917</a>
             </span>
             <span className="top-bar-item">
               <i className="fas fa-envelope"></i>

@@ -34,12 +34,17 @@ const contactDetails = [
   {
     icon: 'fas fa-mobile-alt',
     title: 'Mobile',
-    content: <a href="tel:+919841028167">+91-98410-28167</a>,
+    content: <a href="tel:+919094790917">+91 90947 90917</a>,
   },
   {
     icon: 'fas fa-envelope',
     title: 'Email',
-    content: <a href="mailto:info@atvmanufacturing.com">info@atvmanufacturing.com</a>,
+    content: (
+      <>
+        <a href="mailto:info@atvmanufacturing.com">info@atvmanufacturing.com</a><br />
+        <a href="mailto:dj@atvmanufacturing.com">dj@atvmanufacturing.com</a>
+      </>
+    ),
   },
   {
     icon: 'fas fa-user-tie',

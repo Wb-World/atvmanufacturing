@@ -1109,6 +1109,26 @@ ul { list-style: none; }
   letter-spacing: 0.8px;
   line-height: 1.3;
 }
+.client-grid-logo-text {
+  height: 58px;
+  width: 100%;
+  max-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--heading-color);
+  text-align: center;
+  letter-spacing: 0.5px;
+  opacity: 0.75;
+  transition: opacity 0.25s ease;
+}
+.client-grid-logo:hover .client-grid-logo-text {
+  opacity: 1;
+  color: var(--primary-blue);
+}
 
 /* Hero scroll SVG arrow */
 .hero-scroll-svg {

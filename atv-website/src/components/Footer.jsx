@@ -40,7 +40,7 @@ export default function Footer() {
               <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
               <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
               <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-              <a href="https://wa.me/919841028167" aria-label="WhatsApp" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/919094790917" aria-label="WhatsApp" target="_blank" rel="noreferrer">
                 <i className="fab fa-whatsapp"></i>
               </a>
             </div>
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
             <div className="footer-contact-item">
               <i className="fas fa-mobile-alt"></i>
-              <div><a href="tel:+919841028167">+91-98410-28167</a></div>
+              <div><a href="tel:+919094790917">+91 90947 90917</a></div>
             </div>
             <div className="footer-contact-item">
               <i className="fas fa-envelope"></i>

@@ -47,18 +47,26 @@ const applications = [
 ]
 
 const clients = [
+  // Row 1
+  { name: 'Brakes India', img: '/images/clients/brakes-india-ivs-client.jpg' },
+  { name: 'TEL Turbo Energy', img: '/images/clients/Tel-turbo-energy-client.jpg' },
   { name: 'Woosu Automotive India', img: '/images/clients/woosu-india-client.jpg' },
+  { name: 'Garrett Advancing Motion', img: '/images/clients/garrett-advancing-motion-client.jpg' },
+  // Row 2
+  { name: 'Daimler Trucks', img: '/images/clients/daimler-truck.jpg' },
+  { name: 'IM Gears', img: '/images/clients/im-gears-client.png' },
+  { name: 'Helical', img: '/images/clients/helical-client.jpg' },
+  { name: 'ABI Showatech', img: '/images/clients/ABI-showatech.jpg' },
+  // Row 3
   { name: 'Delphi-TVS Technologies', img: '/images/clients/delphi-tvs-tech-client.jpg' },
   { name: 'Nash Industries', img: '/images/clients/nash-industries-client.jpg' },
-  { name: 'TVS Brakes India', img: '/images/clients/brakes-india-ivs-client.jpg' },
+  { name: 'IR', img: '/images/clients/IR-client.jpg' },
+  { name: 'SPM', img: '/images/clients/spm-client.jpg' },
+  // Row 4
   { name: 'Gestamp', img: '/images/clients/gestamp-client.jpg' },
-  { name: 'Enkei', img: '/images/clients/ENKEI-client.jpg' },
-  { name: 'Garrett Advancing Motion', img: '/images/clients/garrett-advancing-motion-client.jpg' },
   { name: 'ZF / Rane', img: '/images/clients/zf-rane-client.jpg' },
-  { name: 'Saurer', img: '/images/clients/Saurer-client.jpg' },
-  { name: 'TEL Turbo Energy', img: '/images/clients/Tel-turbo-energy-client.jpg' },
-  { name: 'Inzi Controls', img: '/images/clients/inzi-controls-client.jpg' },
-  { name: 'ABI Showatech', img: '/images/clients/ABI-showatech.jpg' },
+  { name: 'Greentech', img: '/images/clients/greentech-client.jpg' },
+  { name: 'KDrive', img: '/images/clients/kdrive-client.jpg' },
 ]
 
 const feintoolFeatures = [
@@ -328,7 +336,11 @@ export default function Home() {
           <div className="clients-logo-grid" data-aos="fade-up" data-aos-delay="200">
             {clients.map((c) => (
               <div className="client-grid-logo" key={c.name} title={c.name}>
-                <img src={c.img} alt={c.name} loading="lazy" />
+                {c.img ? (
+                  <img src={c.img} alt={c.name} loading="lazy" />
+                ) : (
+                  <div className="client-grid-logo-text">{c.name}</div>
+                )}
                 <span className="client-grid-name">{c.name}</span>
               </div>
             ))}
