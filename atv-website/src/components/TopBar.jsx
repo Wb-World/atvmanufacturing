@@ -8,10 +8,7 @@ export default function TopBar() {
               <i className="fas fa-phone-alt"></i>
               <a href="tel:+914447418989">+91 44-4741-8989</a>
             </span>
-            <span className="top-bar-item">
-              <i className="fas fa-mobile-alt"></i>
-              <a href="tel:+919094790917">+91 90947 90917</a>
-            </span>
+
             <span className="top-bar-item">
               <i className="fas fa-envelope"></i>
               <a href="mailto:info@atvmanufacturing.com">info@atvmanufacturing.com</a>
